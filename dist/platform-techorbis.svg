@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="640" height="250" viewBox="0 0 640 250" fill="none">
+  <rect width="640" height="250" fill="#000000"/>
+  <path d="M38 82C47 56 66 48 92 48C116 48 134 57 144 72V102C136 89 121 81 102 81C86 81 74 87 67 98V180C72 193 84 200 100 200C121 200 137 190 144 175V208C133 224 114 232 92 232C66 232 46 223 38 197V82Z" fill="#002A2B"/>
+  <text x="145" y="165" font-family="Poppins, Arial, sans-serif" font-size="102" font-weight="700" fill="#002A2B">ECH</text>
+  <circle cx="432" cy="138" r="52" stroke="#63EA00" stroke-width="28" fill="none"/>
+  <path d="M390 108C402 90 422 84 440 90" stroke="#63EA00" stroke-width="14" stroke-linecap="round"/>
+  <text x="468" y="165" font-family="Poppins, Arial, sans-serif" font-size="102" font-weight="700" fill="#63EA00">RBIS</text>
+</svg>
