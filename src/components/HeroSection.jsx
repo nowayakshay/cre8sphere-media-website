@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageContainer from "../layouts/PageContainer";
@@ -127,12 +127,3 @@ function HeroSection() {
 }
 
 export default HeroSection;
-
-
-
-
-
-
-
-
-

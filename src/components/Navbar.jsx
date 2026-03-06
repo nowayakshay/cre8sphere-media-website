@@ -17,11 +17,11 @@ function Navbar() {
   return (
     <header className="sticky top-4 z-50">
       <PageContainer>
-        <div className="rounded-full border border-brand-border/80 bg-white px-6 py-3 shadow-sm backdrop-blur-md">
+        <div className="relative overflow-hidden rounded-[28px] border border-black/5 bg-white/70 px-6 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.06)] backdrop-blur-[10px]">
           <nav className="flex items-center justify-between">
             <Link
               to="/"
-              className="inline-flex items-center text-brand-text transition-colors duration-200 hover:text-brand-accent"
+              className="relative inline-flex items-center text-brand-text transition-colors duration-200 hover:text-brand-accent"
             >
               <img
                 src="/logo-main.svg"
@@ -30,7 +30,7 @@ function Navbar() {
               />
             </Link>
 
-            <div className="hidden items-center gap-2 md:flex">
+            <div className="relative hidden items-center gap-2 md:flex">
               <ul className="flex items-center gap-1">
                 {links.map((link) => (
                   <li key={link.label}>
@@ -49,7 +49,7 @@ function Navbar() {
               </ul>
             </div>
 
-            <div className="flex items-center gap-2 md:hidden">
+            <div className="relative flex items-center gap-2 md:hidden">
               <button
                 type="button"
                 aria-label="Toggle navigation menu"

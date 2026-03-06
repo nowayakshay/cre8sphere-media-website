@@ -66,7 +66,7 @@ function PageHeroSection({ title, description, subtitle, illustration = "about" 
             <div className="hero-orb pointer-events-none absolute right-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-gradient-to-tr from-brand-accent/14 via-brand-accent/8 to-transparent blur-3xl" />
             <div className="hero-orb pointer-events-none absolute bottom-8 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full bg-gradient-to-t from-brand-accent/12 to-transparent blur-2xl" />
             <div
-              className="pointer-events-none absolute inset-0 opacity-35"
+              className="drift-grid pointer-events-none absolute inset-0 opacity-35"
               style={{
                 backgroundImage:
                   "linear-gradient(to right, rgba(0,128,128,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,128,128,0.08) 1px, transparent 1px)",

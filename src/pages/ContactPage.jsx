@@ -36,7 +36,7 @@ function ContactPage() {
           <PageContainer>
             <SectionReveal>
               <div className="grid gap-8 lg:grid-cols-2">
-                <article className="surface-card section-layer rounded-xl bg-gradient-to-br from-white via-gray-50 to-teal-50/40 p-8">
+                <article className="saas-shell section-layer p-8">
                   <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                     Contact Information
                   </h2>
@@ -97,7 +97,7 @@ function ContactPage() {
                   </div>
                 </article>
 
-                <article className="surface-card elevate-card rounded-xl bg-white p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
+                <article className="gradient-card elevate-card p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
                   <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                     Send Us a Message
                   </h2>

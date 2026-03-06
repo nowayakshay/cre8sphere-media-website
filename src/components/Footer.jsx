@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="pb-8 pt-6" id="contact">
       <PageContainer>
-        <div className="rounded-[2rem] border border-brand-border bg-white px-6 py-10 text-brand-text shadow-md transition-colors duration-300 sm:px-8 sm:py-12">
+        <div className="saas-shell px-6 py-10 text-brand-text transition-colors duration-300 sm:px-8 sm:py-12">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-600">

@@ -8,7 +8,7 @@ function WhoWeAre() {
     <section className="bg-gray-50/70 py-20" id="about">
       <PageContainer>
         <SectionReveal>
-          <div className="surface-card section-layer relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-white via-gray-50 to-teal-50/40 px-7 py-9 sm:px-10 sm:py-12">
+          <div className="saas-shell section-layer relative px-7 py-9 sm:px-10 sm:py-12">
             <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-brand-accent/10 blur-3xl" />
             <div className="relative grid gap-8 lg:grid-cols-[1.3fr_0.9fr] lg:items-center">
               <div>
@@ -31,10 +31,18 @@ function WhoWeAre() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="rounded-xl border border-brand-border bg-white p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="gradient-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <svg viewBox="0 0 280 220" className="h-56 w-full">
+                  <defs>
+                    <linearGradient id="whoPanel" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#008080" stopOpacity="0.16" />
+                      <stop offset="100%" stopColor="#00b3b3" stopOpacity="0.04" />
+                    </linearGradient>
+                  </defs>
                   <rect x="10" y="12" width="260" height="196" rx="18" fill="#F7F9FA" stroke="#E5E7EB" />
+                  <rect x="28" y="28" width="92" height="72" rx="18" fill="url(#whoPanel)" />
+                  <rect x="136" y="28" width="116" height="34" rx="12" fill="#fff" stroke="#E5E7EB" />
                   <circle cx="62" cy="62" r="20" fill="#008080" fillOpacity="0.16" />
                   <circle cx="140" cy="48" r="12" fill="#008080" fillOpacity="0.24" />
                   <circle cx="216" cy="74" r="16" fill="#008080" fillOpacity="0.2" />
@@ -43,7 +51,21 @@ function WhoWeAre() {
                   <text x="52" y="145" fontSize="12" fill="#333333">Technology + Creativity + Innovation</text>
                   <text x="52" y="164" fontSize="10" fill="#6B7280">Digital media for modern audiences</text>
                 </svg>
-                <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
+                <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                  <div className="feature-tile p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
+                      Media Intelligence
+                    </p>
+                    <p className="mt-1 text-sm text-slate-600">Complex topics, translated clearly.</p>
+                  </div>
+                  <div className="gradient-card p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
+                      Modern Formats
+                    </p>
+                    <p className="mt-1 text-sm text-slate-600">Platforms designed for today&apos;s audiences.</p>
+                  </div>
+                </div>
+                <p className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
                   <CircleDot className="h-3.5 w-3.5" />
                   Connected ideas
                 </p>

@@ -55,23 +55,25 @@ function CoverageSection() {
     <section className="bg-white py-20" id="coverage">
       <PageContainer>
         <SectionReveal>
-          <div className="surface-card section-layer rounded-[2rem] bg-gradient-to-br from-white via-gray-50 to-teal-50/40 p-7 sm:p-10">
+          <div className="saas-shell section-layer p-7 sm:p-10">
             <h2 className="inline-flex items-center gap-3 text-3xl font-semibold tracking-tight sm:text-4xl">
               <Grid2x2 className="h-7 w-7 text-brand-accent" />
               What We Cover
             </h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {coverage.map((item) => {
+              {coverage.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <motion.article
                     key={item.title}
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.24 }}
-                    className="elevate-card rounded-xl border border-brand-border bg-white p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className={`elevate-card rounded-xl p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                      index % 3 === 0 ? "feature-tile" : "gradient-card"
+                    }`}
                   >
-                    <div className="inline-flex rounded-lg border border-brand-border bg-brand-soft p-2">
-                      <Icon className="h-5 w-5 text-brand-accent" />
+                    <div className="feature-chip h-10 w-10">
+                      <Icon className="h-5 w-5 text-white" />
                     </div>
                     <h3 className="mt-3 text-lg font-semibold">{item.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>

@@ -60,7 +60,7 @@ function AboutUsPage() {
         <section className="bg-gray-50/70 py-16 sm:py-20">
           <PageContainer>
             <SectionReveal>
-              <article className="surface-card elevate-card rounded-xl p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
+              <article className="gradient-card elevate-card p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
                 <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                   Our Mission
                 </h2>
@@ -79,7 +79,7 @@ function AboutUsPage() {
         <section className="pb-16 sm:pb-20">
           <PageContainer>
             <SectionReveal>
-              <article className="surface-card section-layer rounded-xl bg-gradient-to-br from-white via-gray-50 to-teal-50/40 p-8">
+              <article className="saas-shell section-layer p-8">
                 <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                   Our Vision
                 </h2>
@@ -98,25 +98,36 @@ function AboutUsPage() {
         <section className="pb-16 sm:pb-20" id="platforms">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                Our Platforms
-              </h2>
-              <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {platforms.map((platform) => (
+              <div className="saas-shell section-layer p-8">
+                <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Our Platforms
+                </h2>
+                <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {platforms.map((platform, index) => (
                   <a
                     key={platform.title}
                     href={platform.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="surface-card elevate-card block rounded-xl border border-gray-200 p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className="gradient-card elevate-card block p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
-                    <div className="mb-4 flex h-12 items-center">
+                    <div
+                      className={`mb-5 rounded-2xl p-4 ${
+                        index === 0
+                          ? "bg-gradient-to-br from-teal-50 via-white to-cyan-50"
+                          : index === 1
+                            ? "bg-gradient-to-br from-lime-50 via-white to-teal-50"
+                            : "bg-gradient-to-br from-fuchsia-50 via-white to-rose-50"
+                      }`}
+                    >
+                      <div className="flex h-12 items-center">
                       <img
                         src={platform.logo}
                         alt={`${platform.title} logo`}
                         className="h-10 w-auto object-contain"
                         loading="lazy"
                       />
+                    </div>
                     </div>
                     <h3 className="text-xl font-semibold text-brand-accent">
                       {platform.title}
@@ -126,7 +137,8 @@ function AboutUsPage() {
                     </p>
                     <p className="mt-4 text-sm font-medium text-brand-accent">Visit Website</p>
                   </a>
-                ))}
+                  ))}
+                </div>
               </div>
             </SectionReveal>
           </PageContainer>
@@ -135,7 +147,7 @@ function AboutUsPage() {
         <section className="pb-16 sm:pb-20">
           <PageContainer>
             <SectionReveal>
-              <article className="surface-card section-layer rounded-xl bg-gradient-to-br from-white via-gray-50 to-teal-50/40 p-8">
+              <article className="saas-shell section-layer p-8">
                 <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                   Innovation at Cre8sphere Media
                 </h2>
@@ -162,14 +174,17 @@ function AboutUsPage() {
         <section className="bg-gray-50/70 py-16 sm:py-20">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                Our Values
-              </h2>
-              <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                {values.map((value) => (
+              <div className="saas-shell section-layer p-8">
+                <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Our Values
+                </h2>
+                <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                  {values.map((value, index) => (
                   <article
                     key={value.title}
-                    className="surface-card elevate-card rounded-xl p-6 shadow-md hover:-translate-y-1 hover:shadow-xl"
+                    className={`elevate-card rounded-xl p-6 shadow-md hover:-translate-y-1 hover:shadow-xl ${
+                      index === 0 || index === 3 ? "feature-tile" : "gradient-card"
+                    }`}
                   >
                     <h3 className="text-lg font-semibold text-brand-accent">
                       {value.title}
@@ -178,7 +193,8 @@ function AboutUsPage() {
                       {value.description}
                     </p>
                   </article>
-                ))}
+                  ))}
+                </div>
               </div>
             </SectionReveal>
           </PageContainer>

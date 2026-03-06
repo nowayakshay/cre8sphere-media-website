@@ -8,7 +8,10 @@ function CtaSection() {
     <section className="pb-24 pt-4">
       <PageContainer>
         <SectionReveal>
-          <div className="surface-card section-layer overflow-hidden rounded-[2rem] bg-gradient-to-br from-white via-gray-50 to-teal-50 p-10 text-center sm:p-14">
+          <div className="saas-shell section-layer overflow-hidden p-10 text-center sm:p-14">
+            <div className="mx-auto mb-5 inline-flex rounded-full border border-brand-border bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-accent">
+              Stay Connected
+            </div>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Discover the Future of Technology
             </h2>
