@@ -1,12 +1,38 @@
 <svg width="640" height="320" viewBox="0 0 640 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="320" fill="transparent"/>
-  <text x="70" y="190" fill="#252525" font-family="Impact, Arial Narrow, Arial, sans-serif" font-size="170" letter-spacing="-3">
-    Origin
-  </text>
-  <text x="505" y="190" fill="#9147C9" font-family="Impact, Arial Narrow, Arial, sans-serif" font-size="170" letter-spacing="-3">
-    8
-  </text>
-  <text x="355" y="230" fill="#252525" font-family="Arial Narrow, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="-0.5">
-    By Cre8sphere
-  </text>
+  <rect width="640" height="320" fill="transparent" />
+  <g aria-label="Origin8 By Cre8sphere">
+    <text
+      x="66"
+      y="202"
+      fill="#242424"
+      font-family="Arial Narrow, Franklin Gothic Medium, Impact, sans-serif"
+      font-size="178"
+      font-weight="700"
+      letter-spacing="-7"
+    >
+      Origin
+    </text>
+    <text
+      x="504"
+      y="202"
+      fill="#9146C9"
+      font-family="Arial Narrow, Franklin Gothic Medium, Impact, sans-serif"
+      font-size="180"
+      font-weight="700"
+      letter-spacing="-6"
+    >
+      8
+    </text>
+    <text
+      x="356"
+      y="248"
+      fill="#242424"
+      font-family="Arial Narrow, Arial, sans-serif"
+      font-size="43"
+      font-weight="700"
+      letter-spacing="-1.2"
+    >
+      By Cre8sphere
+    </text>
+  </g>
 </svg>
