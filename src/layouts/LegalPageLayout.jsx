@@ -10,7 +10,7 @@ function LegalPageLayout({ title, intro, updatedOn, children }) {
       <main className="pb-8 pt-6 sm:pt-8">
         <PageContainer>
           <SectionReveal>
-            <section className="surface-card section-layer rounded-[2rem] bg-gradient-to-br from-white via-gray-50 to-teal-50 px-6 py-12 text-center sm:px-10 sm:py-16">
+            <section className="surface-card section-layer bg-white/95 px-6 py-12 text-center sm:px-10 sm:py-16">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">{title}</h1>
               <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
                 {intro}

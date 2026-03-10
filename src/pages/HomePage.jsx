@@ -2,6 +2,7 @@
 import HeroSection from "../components/HeroSection";
 import WhoWeAre from "../components/WhoWeAre";
 import PlatformsSection from "../components/PlatformsSection";
+import LatestInsightsSection from "../components/LatestInsightsSection";
 import InnovationToolsSection from "../components/InnovationToolsSection";
 import CoverageSection from "../components/CoverageSection";
 import WhyCre8sphere from "../components/WhyCre8sphere";
@@ -16,6 +17,7 @@ function HomePage() {
         <HeroSection />
         <WhoWeAre />
         <PlatformsSection />
+        <LatestInsightsSection />
         <InnovationToolsSection />
         <CoverageSection />
         <WhyCre8sphere />

@@ -20,7 +20,7 @@ const platforms = [
   {
     title: "Origin8",
     website: "https://origin8agency.in/",
-    logo: "/Origin8%20Logo.png",
+    logo: "/Origin8%20Logo%20Dark.svg",
     description: "Creative branding and digital storytelling."
   }
 ];

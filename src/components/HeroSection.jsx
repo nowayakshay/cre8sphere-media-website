@@ -9,7 +9,7 @@ function HeroSection() {
     <section className="pt-6 sm:pt-8">
       <PageContainer>
         <SectionReveal>
-          <div className="surface-card relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-white via-gray-50 to-teal-50 px-6 py-10 sm:px-10 sm:py-14">
+          <div className="surface-card section-layer relative overflow-hidden bg-white/95 px-6 py-10 sm:px-10 sm:py-14">
             <div className="hero-orb pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-accent/10 blur-3xl" />
             <div className="hero-orb pointer-events-none absolute -bottom-20 left-1/3 h-56 w-56 rounded-full bg-teal-100/40 blur-3xl" />
             <div className="hero-orb pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-gradient-to-br from-brand-accent/20 via-brand-accent/10 to-transparent blur-3xl" />
@@ -30,7 +30,8 @@ function HeroSection() {
                   Cre8sphere Media
                 </p>
                 <h1 className="max-w-3xl text-5xl font-semibold leading-[0.92] tracking-tight sm:text-6xl lg:text-6xl">
-                  Exploring Tomorrow&apos;s Technology Today
+                  Exploring Tomorrow&apos;s <span className="gradient-text">Technology</span>{" "}
+                  Today
                 </h1>
                 <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
                   Cre8sphere Media is a modern digital media company focused on
@@ -66,7 +67,7 @@ function HeroSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="rounded-xl border border-white/50 bg-white/60 p-6 shadow-[0_18px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+                <div className="rounded-xl border border-black/5 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
                   <div className="grid grid-cols-2 gap-4">
                     <article className="rounded-xl bg-white p-4 shadow-md">
                       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">

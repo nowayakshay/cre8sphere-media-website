@@ -65,7 +65,7 @@ function DisclaimerPage() {
       </SectionReveal>
 
       <SectionReveal>
-        <article className="surface-card elevate-card section-layer rounded-xl bg-gradient-to-br from-white via-gray-50 to-teal-50/40 p-7 sm:p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
+        <article className="surface-card elevate-card section-layer bg-white/95 p-7 sm:p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
           <h2 className="text-2xl font-semibold tracking-tight">Limitation of Liability</h2>
           <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">
             You rely on information on this website at your own risk. Cre8sphere
