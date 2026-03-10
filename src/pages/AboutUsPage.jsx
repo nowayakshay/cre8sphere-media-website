@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "../components/SectionReveal";
 import PageHeroSection from "../components/PageHeroSection";
+import Seo from "../components/Seo";
 
 const platforms = [
   {
@@ -48,6 +49,11 @@ const values = [
 function AboutUsPage() {
   return (
     <div className="bg-white text-brand-text">
+      <Seo
+        title="About Cre8sphere Media"
+        description="Learn about Cre8sphere Media, a digital media company focused on technology, AI innovation, and emerging tech ecosystems."
+        path="/about"
+      />
       <Navbar />
       <main className="pb-8">
         <PageHeroSection

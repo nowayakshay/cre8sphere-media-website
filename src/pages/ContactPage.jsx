@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "../components/SectionReveal";
 import PageHeroSection from "../components/PageHeroSection";
+import Seo from "../components/Seo";
 
 const contactItems = [
   {
@@ -23,6 +24,11 @@ const contactItems = [
 function ContactPage() {
   return (
     <div className="bg-white text-brand-text">
+      <Seo
+        title="Contact Cre8sphere Media"
+        description="Get in touch with Cre8sphere Media for collaborations, media inquiries, and partnerships."
+        path="/contact"
+      />
       <Navbar />
       <main className="pb-8">
         <PageHeroSection

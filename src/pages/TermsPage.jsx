@@ -9,6 +9,9 @@ function TermsPage() {
       title="Terms and Conditions"
       intro="By accessing this website, you agree to comply with these Terms and Conditions."
       updatedOn={updatedOn}
+      seoTitle="Terms and Conditions | Cre8sphere Media"
+      seoDescription="Review the Terms and Conditions governing your use of the Cre8sphere Media website."
+      seoPath="/terms"
     >
       <SectionReveal>
         <article className="surface-card elevate-card rounded-xl p-7 sm:p-8">

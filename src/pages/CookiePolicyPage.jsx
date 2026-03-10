@@ -9,6 +9,9 @@ function CookiePolicyPage() {
       title="Cookie Policy"
       intro="This Cookie Policy explains how cookies are used on the Cre8sphere Media website."
       updatedOn={updatedOn}
+      seoTitle="Cookie Policy | Cre8sphere Media"
+      seoDescription="Learn how Cre8sphere Media uses cookies, analytics tools, and browser-based tracking technologies."
+      seoPath="/cookie-policy"
     >
       <SectionReveal>
         <article className="surface-card elevate-card rounded-xl p-7 sm:p-8">

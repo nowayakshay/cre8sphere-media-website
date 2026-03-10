@@ -9,6 +9,9 @@ function DisclaimerPage() {
       title="Disclaimer"
       intro="This Disclaimer explains the scope and limitations of information published by Cre8sphere Media."
       updatedOn={updatedOn}
+      seoTitle="Disclaimer | Cre8sphere Media"
+      seoDescription="Read the Cre8sphere Media disclaimer covering editorial opinions, informational content, and limitation of liability."
+      seoPath="/disclaimer"
     >
       <SectionReveal>
         <article className="surface-card elevate-card rounded-xl p-7 sm:p-8">

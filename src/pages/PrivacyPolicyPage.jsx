@@ -9,6 +9,9 @@ function PrivacyPolicyPage() {
       title="Privacy Policy"
       intro="Cre8sphere Media respects your privacy and is committed to protecting personal information shared through this website."
       updatedOn={updatedOn}
+      seoTitle="Privacy Policy | Cre8sphere Media"
+      seoDescription="Read the Privacy Policy for Cre8sphere Media and understand how personal information is collected, used, and protected."
+      seoPath="/privacy-policy"
     >
       <SectionReveal>
         <article className="surface-card elevate-card rounded-xl p-7 sm:p-8">

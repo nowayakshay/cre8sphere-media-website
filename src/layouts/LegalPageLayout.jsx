@@ -2,10 +2,12 @@
 import Footer from "../components/Footer";
 import PageContainer from "./PageContainer";
 import SectionReveal from "../components/SectionReveal";
+import Seo from "../components/Seo";
 
-function LegalPageLayout({ title, intro, updatedOn, children }) {
+function LegalPageLayout({ title, intro, updatedOn, seoTitle, seoDescription, seoPath, children }) {
   return (
     <div className="bg-white text-brand-text">
+      <Seo title={seoTitle || title} description={seoDescription || intro} path={seoPath || "/"} />
       <Navbar />
       <main className="pb-8 pt-6 sm:pt-8">
         <PageContainer>
@@ -32,11 +34,3 @@ function LegalPageLayout({ title, intro, updatedOn, children }) {
 }
 
 export default LegalPageLayout;
-
-
-
-
-
-
-
-
