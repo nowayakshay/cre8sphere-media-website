@@ -7,17 +7,29 @@ import SectionReveal from "./SectionReveal";
 const feeds = [
   {
     platform: "GizmoGeek Hub",
-    label: "From GizmoGeek Hub",
+    sectionTitle: "Latest from GizmoGeek Hub",
     logo: "/GizmoGeek%20Hub%20Logo.png",
     feedUrl: "https://gizmogeekhub.com/feed"
   },
   {
     platform: "TechOrbis",
-    label: "From TechOrbis",
+    sectionTitle: "Latest from TechOrbis",
     logo: "/TechOrbis%20Logo.png",
     feedUrl: "https://techorbis.in/feed"
   }
 ];
+
+function stripHtml(html = "") {
+  return html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function buildExcerpt(item) {
+  const text = stripHtml(item.description || item.content || "");
+
+  if (!text) return "Latest articles are currently loading.";
+
+  return text.length > 140 ? `${text.slice(0, 137).trim()}...` : text;
+}
 
 function extractThumbnail(item) {
   if (item.thumbnail) return item.thumbnail;
@@ -57,9 +69,10 @@ function LatestInsightsSection() {
             }
 
             const data = await response.json();
-            const articles = (data.items || []).slice(0, 3).map((item) => ({
+            const articles = (data.items || []).slice(0, 4).map((item) => ({
               title: item.title,
               href: item.link,
+              excerpt: buildExcerpt(item),
               thumbnail: extractThumbnail(item),
               publishDate: formatDate(item.pubDate),
               platform: feed.platform
@@ -68,7 +81,7 @@ function LatestInsightsSection() {
             return {
               ...feed,
               articles,
-              error: articles.length === 0 ? "No articles available right now." : null
+              error: articles.length === 0 ? "Latest articles are currently loading." : null
             };
           })
         );
@@ -82,7 +95,7 @@ function LatestInsightsSection() {
             feeds.map((feed) => ({
               ...feed,
               articles: [],
-              error: "Unable to load articles right now."
+              error: "Latest articles are currently loading."
             }))
           );
         }
@@ -136,14 +149,19 @@ function LatestInsightsSection() {
                         loading="lazy"
                       />
                     </div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-accent">
-                      {group.label}
-                    </p>
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-accent">
+                        Editorial Feed
+                      </p>
+                      <h3 className="mt-1 text-2xl font-semibold tracking-tight text-brand-text">
+                        {group.sectionTitle}
+                      </h3>
+                    </div>
                   </div>
 
                   {loading ? (
                     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                      {[1, 2, 3].map((item) => (
+                      {[1, 2, 3, 4].map((item) => (
                         <div key={item} className="surface-card overflow-hidden p-0">
                           <div className="h-44 animate-pulse bg-slate-100" />
                           <div className="space-y-3 p-6">
@@ -203,6 +221,9 @@ function LatestInsightsSection() {
                             <h3 className="mt-3 text-xl font-semibold leading-8 text-brand-text">
                               {article.title}
                             </h3>
+                            <p className="mt-3 text-sm leading-7 text-slate-600">
+                              {article.excerpt}
+                            </p>
                             <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand-accent">
                               Read Article
                               <ArrowUpRight className="h-4 w-4" />
