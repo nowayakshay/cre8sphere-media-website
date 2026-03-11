@@ -9,12 +9,14 @@ const feeds = [
     platform: "GizmoGeek Hub",
     sectionTitle: "Latest from GizmoGeek Hub",
     logo: "/GizmoGeek%20Hub%20Logo.png",
+    apiUrl: "https://gizmogeekhub.com/wp-json/wp/v2/posts?per_page=4&_embed",
     feedUrl: "https://gizmogeekhub.com/feed"
   },
   {
     platform: "TechOrbis",
     sectionTitle: "Latest from TechOrbis",
     logo: "/TechOrbis%20Logo.png",
+    apiUrl: "https://techorbis.in/wp-json/wp/v2/posts?per_page=4&_embed",
     feedUrl: "https://techorbis.in/feed"
   }
 ];
@@ -23,20 +25,25 @@ function stripHtml(html = "") {
   return html.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 }
 
-function buildExcerpt(item) {
-  const text = stripHtml(item.description || item.content || "");
+function buildExcerpt(text) {
+  const cleanText = stripHtml(text);
 
-  if (!text) return "Latest articles are currently loading.";
+  if (!cleanText) return "Summary unavailable.";
 
-  return text.length > 140 ? `${text.slice(0, 137).trim()}...` : text;
+  return cleanText.length > 140 ? `${cleanText.slice(0, 137).trim()}...` : cleanText;
 }
 
-function extractThumbnail(item) {
+function extractRssThumbnail(item) {
   if (item.thumbnail) return item.thumbnail;
   if (item.enclosure?.link) return item.enclosure.link;
 
   const match = item.description?.match(/<img[^>]+src=["']([^"']+)["']/i);
   return match ? match[1] : null;
+}
+
+function extractWpThumbnail(item) {
+  const media = item._embedded?.["wp:featuredmedia"]?.[0];
+  return media?.source_url || null;
 }
 
 function formatDate(dateString) {
@@ -47,6 +54,70 @@ function formatDate(dateString) {
     month: "short",
     year: "numeric"
   });
+}
+
+async function fetchJsonWithTimeout(url, timeoutMs = 8000) {
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    return await response.json();
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
+
+async function fetchWpPosts(feed) {
+  const items = await fetchJsonWithTimeout(feed.apiUrl);
+
+  return items.slice(0, 4).map((item) => ({
+    title: stripHtml(item.title?.rendered || "Untitled article"),
+    href: item.link,
+    excerpt: buildExcerpt(item.excerpt?.rendered || item.content?.rendered || ""),
+    thumbnail: extractWpThumbnail(item),
+    publishDate: formatDate(item.date),
+    platform: feed.platform
+  }));
+}
+
+async function fetchRssPosts(feed) {
+  const data = await fetchJsonWithTimeout(
+    `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.feedUrl)}`
+  );
+
+  return (data.items || []).slice(0, 4).map((item) => ({
+    title: item.title,
+    href: item.link,
+    excerpt: buildExcerpt(item.description || item.content || ""),
+    thumbnail: extractRssThumbnail(item),
+    publishDate: formatDate(item.pubDate),
+    platform: feed.platform
+  }));
+}
+
+async function fetchFeedArticles(feed) {
+  const loaders = [() => fetchWpPosts(feed), () => fetchRssPosts(feed)];
+  let lastError = null;
+
+  for (const load of loaders) {
+    try {
+      const articles = await load();
+
+      if (articles.length > 0) {
+        return articles;
+      }
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error(`No articles available for ${feed.platform}`);
 }
 
 function LatestInsightsSection() {
@@ -60,28 +131,12 @@ function LatestInsightsSection() {
       try {
         const results = await Promise.all(
           feeds.map(async (feed) => {
-            const response = await fetch(
-              `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.feedUrl)}`
-            );
-
-            if (!response.ok) {
-              throw new Error(`Failed to fetch ${feed.platform}`);
-            }
-
-            const data = await response.json();
-            const articles = (data.items || []).slice(0, 4).map((item) => ({
-              title: item.title,
-              href: item.link,
-              excerpt: buildExcerpt(item),
-              thumbnail: extractThumbnail(item),
-              publishDate: formatDate(item.pubDate),
-              platform: feed.platform
-            }));
+            const articles = await fetchFeedArticles(feed);
 
             return {
               ...feed,
               articles,
-              error: articles.length === 0 ? "Latest articles are currently loading." : null
+              error: articles.length === 0 ? "No recent articles are available right now." : null
             };
           })
         );
@@ -95,7 +150,7 @@ function LatestInsightsSection() {
             feeds.map((feed) => ({
               ...feed,
               articles: [],
-              error: "Latest articles are currently loading."
+              error: "Articles are temporarily unavailable. Please try again shortly."
             }))
           );
         }
