@@ -23,14 +23,14 @@ const contactItems = [
 
 function ContactPage() {
   return (
-    <div className="bg-white text-brand-text">
+    <div className="bg-brand-bg text-brand-text">
       <Seo
         title="Contact Cre8sphere Media"
         description="Get in touch with Cre8sphere Media for collaborations, media inquiries, and partnerships."
         path="/contact"
       />
       <Navbar />
-      <main className="pb-8">
+      <main className="pb-8 pt-28 sm:pt-32">
         <PageHeroSection
           illustration="contact"
           subtitle="Cre8sphere Media"
@@ -38,12 +38,12 @@ function ContactPage() {
           description="Have questions, collaborations, or partnership inquiries? Get in touch with the Cre8sphere Media team."
         />
 
-        <section className="bg-gray-50/70 py-16 sm:py-20">
+        <section className="py-16 sm:py-20">
           <PageContainer>
             <SectionReveal>
               <div className="grid gap-8 lg:grid-cols-2">
                 <article className="saas-shell section-layer p-8">
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
                     Contact Information
                   </h2>
                   <ul className="mt-6 space-y-5">
@@ -54,7 +54,7 @@ function ContactPage() {
                         </p>
                         <a
                           href={item.href}
-                          className="mt-1 inline-block text-base text-slate-700 transition-colors hover:text-brand-accent"
+                          className="mt-1 inline-block text-base text-slate-600 transition-colors hover:text-brand-accent"
                         >
                           {item.value}
                         </a>
@@ -63,14 +63,14 @@ function ContactPage() {
                   </ul>
 
                   <div className="mt-10">
-                    <h3 className="text-lg font-semibold">Social Links</h3>
+                    <h3 className="text-lg font-semibold text-slate-950">Social Links</h3>
                     <div className="mt-4 flex items-center gap-4">
                       <a
                         href="https://x.com/cre8spheremedia"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Cre8sphere Media on X"
-                        className="text-slate-500 transition-colors duration-200 hover:text-teal-600"
+                        className="text-slate-400 transition-colors duration-200 hover:text-brand-accent"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -86,7 +86,7 @@ function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Cre8sphere Media on Instagram"
-                        className="text-slate-500 transition-colors duration-200 hover:text-teal-600"
+                        className="text-slate-400 transition-colors duration-200 hover:text-brand-accent"
                       >
                         <Instagram className="h-5 w-5" />
                       </a>
@@ -95,7 +95,7 @@ function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Cre8sphere Media on LinkedIn"
-                        className="text-slate-500 transition-colors duration-200 hover:text-teal-600"
+                        className="text-slate-400 transition-colors duration-200 hover:text-brand-accent"
                       >
                         <Linkedin className="h-5 w-5" />
                       </a>
@@ -103,62 +103,56 @@ function ContactPage() {
                   </div>
                 </article>
 
-                <article className="gradient-card elevate-card p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
-                  <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                <article className="gradient-card elevate-card p-8">
+                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
                     Send Us a Message
                   </h2>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
                     Have a question or want to collaborate with us? Fill out the
                     form below and our team will get back to you.
                   </p>
                   <form className="mt-6 space-y-5">
                     <label className="block">
-                      <span className="mb-2 block text-sm font-medium">Full Name</span>
+                      <span className="mb-2 block text-sm font-medium text-slate-700">Full Name</span>
                       <input
                         type="text"
                         placeholder="Your name"
-                        className="w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none transition-colors focus:border-brand-accent"
+                        className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-300/40"
                       />
                     </label>
 
                     <label className="block">
-                      <span className="mb-2 block text-sm font-medium">Email Address</span>
+                      <span className="mb-2 block text-sm font-medium text-slate-700">Email Address</span>
                       <input
                         type="email"
                         placeholder="you@example.com"
-                        className="w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none transition-colors focus:border-brand-accent"
+                        className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-300/40"
                       />
                     </label>
 
                     <label className="block">
-                      <span className="mb-2 block text-sm font-medium">Message</span>
+                      <span className="mb-2 block text-sm font-medium text-slate-700">Message</span>
                       <textarea
                         rows="5"
                         placeholder="Tell us how we can help"
-                        className="w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-sm outline-none transition-colors focus:border-brand-accent"
+                        className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-300/40"
                       />
                     </label>
 
                     <button
                       type="submit"
-                      className="inline-flex rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:bg-teal-700"
+                      className="inline-flex rounded-xl bg-teal-600 px-6 py-3 text-sm font-semibold text-white"
                     >
                       Send Message
                     </button>
                   </form>
                   <p className="mt-5 text-sm text-slate-500">
                     Looking for policies? Read our{" "}
-                    <Link
-                      to="/privacy-policy"
-                      className="text-brand-accent hover:text-brand-hover"
-                    >
+                    <Link to="/privacy-policy" className="text-brand-accent hover:text-brand-hover">
                       Privacy Policy
                     </Link>{" "}
                     and{" "}
-                    <Link
-                      to="/terms"
-                      className="text-brand-accent hover:text-brand-hover"
-                    >
+                    <Link to="/terms" className="text-brand-accent hover:text-brand-hover">
                       Terms and Conditions
                     </Link>
                     .
@@ -175,3 +169,6 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
+
+

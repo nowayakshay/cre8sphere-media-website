@@ -6,20 +6,19 @@ export default {
     extend: {
       fontFamily: {
         heading: ["Sora", "sans-serif"],
-        body: ["Poppins", "sans-serif"]
+        body: ["Inter", "sans-serif"]
       },
       colors: {
         brand: {
-          text: "#333333",
+          text: "#F8FAFC",
           accent: "#008080",
-          hover: "#006666",
-          bg: "#FFFFFF",
-          soft: "#F7F9FA",
-          border: "#E5E7EB"
+          hover: "#0AA0A0",
+          bg: "#07111F",
+          soft: "#0B1628",
+          border: "rgba(148,163,184,0.18)"
         }
       }
     }
   },
   plugins: []
 };
-

@@ -9,7 +9,7 @@ import CookiePolicyPage from "./pages/CookiePolicyPage";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-brand-bg text-brand-text transition-colors duration-300">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />

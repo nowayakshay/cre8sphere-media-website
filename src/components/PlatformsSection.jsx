@@ -1,5 +1,4 @@
-﻿import { motion } from "framer-motion";
-import { ArrowUpRight, Boxes, Sparkles } from "lucide-react";
+﻿import { ArrowUpRight, Newspaper, PenTool, Smartphone } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "./SectionReveal";
 
@@ -7,94 +6,62 @@ const platforms = [
   {
     title: "GizmoGeek Hub",
     website: "https://gizmogeekhub.com/",
-    logo: "/GizmoGeek%20Hub%20Logo.png",
-    description:
-      "A consumer technology platform covering smartphones, gadgets, and digital tools that power everyday life. GizmoGeek Hub focuses on simplified tech insights, product coverage, and practical guides."
+    description: "Consumer tech insights, smartphone reviews, and ecosystem updates.",
+    icon: Smartphone
   },
   {
     title: "TechOrbis",
     website: "https://techorbis.in/",
-    logo: "/TechOrbis%20Logo.png",
-    description:
-      "A future-focused platform exploring artificial intelligence, electric vehicles, automation, and emerging technologies shaping the next generation of innovation."
+    description: "Focused on AI, electric vehicles, and future technology trends.",
+    icon: Newspaper
   },
   {
-    title: "Origin8",
+    title: "Origin8 by Cre8sphere",
     website: "https://origin8agency.in/",
-    logo: "/Origin8%20Website%20Logo%20Dark.png",
-    description:
-      "A creative studio dedicated to branding, digital storytelling, and visual communication. Origin8 supports media projects and creative initiatives developed within the Cre8sphere Media ecosystem."
+    description: "Creative and digital execution for brand, content, and web experiences.",
+    icon: PenTool
   }
 ];
 
 function PlatformsSection() {
   return (
-    <section className="bg-white py-20" id="platforms">
+    <section className="py-16 sm:py-20" id="platforms">
       <PageContainer>
         <SectionReveal>
-          <div className="saas-shell section-layer px-7 py-9 sm:px-10 sm:py-12">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <p className="inline-flex items-center gap-2 rounded-full border border-brand-border bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-accent">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  Cre8sphere Ecosystem
-                </p>
-                <h2 className="mt-4 inline-flex items-center gap-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                  <Boxes className="h-7 w-7 text-brand-accent" />
-                  Our Platforms
-                </h2>
-              </div>
-              <div className="soft-panel max-w-md p-4">
-                <p className="text-sm leading-6 text-slate-600">
-                  Distinct brands inside one media network, each tailored to a specific
-                  technology and creative audience.
-                </p>
-              </div>
-            </div>
+          <div className="text-center">
+            <p className="inline-flex items-center rounded-lg border border-black/5 bg-slate-50 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-brand-accent">
+              Media Platforms
+            </p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl">
+              Our Platforms
+            </h2>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+              The Cre8sphere Media ecosystem spans editorial brands and creative
+              systems designed for modern technology audiences.
+            </p>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {platforms.map((platform, index) => (
-                <motion.a
-                  key={platform.title}
-                  whileHover={{ y: -6, scale: 1.01 }}
-                  transition={{ duration: 0.24, ease: "easeOut" }}
-                  href={platform.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group gradient-card elevate-card block p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div
-                    className={`mb-5 rounded-2xl p-4 ${
-                      index === 0
-                        ? "bg-gradient-to-br from-teal-50 via-white to-cyan-50"
-                        : index === 1
-                          ? "bg-gradient-to-br from-lime-50 via-white to-teal-50"
-                          : "bg-gradient-to-br from-fuchsia-50 via-white to-rose-50"
-                    }`}
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {platforms.map((platform) => {
+                const Icon = platform.icon;
+                return (
+                  <a
+                    key={platform.title}
+                    href={platform.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="surface-card elevate-card block p-6 text-left"
                   >
-                    <div className="flex h-14 items-center">
-                      <img
-                        src={platform.logo}
-                        alt={`${platform.title} logo`}
-                        className="h-10 w-auto object-contain"
-                        loading="lazy"
-                      />
+                    <div className="feature-chip h-11 w-11 rounded-xl">
+                      <Icon className="h-5 w-5" />
                     </div>
-                  </div>
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="text-xl font-semibold transition-colors duration-300 group-hover:text-brand-accent">
-                      {platform.title}
-                    </h3>
-                    <span className="feature-chip h-10 w-10 shrink-0">
-                      <ArrowUpRight className="h-4 w-4" />
-                    </span>
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
-                    {platform.description}
-                  </p>
-                  <p className="mt-5 text-sm font-medium text-brand-accent">Visit Website</p>
-                </motion.a>
-              ))}
+                    <div className="mt-5 flex items-start justify-between gap-3">
+                      <h3 className="text-xl font-semibold text-slate-900">{platform.title}</h3>
+                      <ArrowUpRight className="h-4 w-4 shrink-0 text-brand-accent" />
+                    </div>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{platform.description}</p>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </SectionReveal>
@@ -104,5 +71,3 @@ function PlatformsSection() {
 }
 
 export default PlatformsSection;
-
-

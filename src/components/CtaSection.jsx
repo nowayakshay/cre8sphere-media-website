@@ -1,33 +1,32 @@
-﻿import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+﻿import { ArrowUpRight } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "./SectionReveal";
 
 function CtaSection() {
   return (
-    <section className="pb-24 pt-4">
+    <section className="pb-24 pt-8">
       <PageContainer>
         <SectionReveal>
-          <div className="saas-shell section-layer overflow-hidden p-10 text-center sm:p-14">
-            <div className="mx-auto mb-5 inline-flex rounded-full border border-brand-border bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-accent">
-              Stay Connected
-            </div>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Discover the Future of Technology
+          <div className="surface-card p-8 text-center sm:p-14">
+            <h2 className="mx-auto max-w-4xl text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl">
+              Start Exploring Cre8sphere Media
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
-              Explore our platforms and stay connected with the ideas, innovations,
-              and technologies shaping tomorrow.
-            </p>
-            <motion.a
-              whileHover={{ y: -2, scale: 1.01 }}
-              transition={{ duration: 0.24 }}
-              href="#platforms"
-              className="mt-8 inline-flex items-center gap-2 rounded-lg bg-teal-600 px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:bg-teal-700"
-            >
-              Explore Our Platforms
-              <ArrowUpRight className="h-4 w-4" />
-            </motion.a>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href="#ecosystem"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-600 px-7 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-teal-700"
+              >
+                Explore Platforms
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#platforms"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-slate-800 transition-colors duration-300 hover:border-brand-accent/30 hover:text-brand-accent"
+              >
+                View AI Products
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </SectionReveal>
       </PageContainer>
@@ -36,9 +35,3 @@ function CtaSection() {
 }
 
 export default CtaSection;
-
-
-
-
-
-

@@ -1,124 +1,113 @@
-import { motion } from "framer-motion";
-import { Cpu } from "lucide-react";
-import { Link } from "react-router-dom";
+﻿import { motion } from "framer-motion";
+import { ArrowRight, Bot, Newspaper, Smartphone } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "./SectionReveal";
 
+const ecosystemCards = [
+  {
+    title: "GizmoGeek Hub",
+    description: "Consumer tech insights",
+    icon: Smartphone,
+    className: "lg:translate-y-0 lg:scale-[0.98]",
+    zIndex: "z-10"
+  },
+  {
+    title: "TechOrbis",
+    description: "AI, EV, future tech",
+    icon: Newspaper,
+    className: "lg:translate-y-0 lg:scale-[1.02]",
+    zIndex: "z-20"
+  },
+  {
+    title: "AI Studio",
+    description: "Repurplex, Refyn AI, Newstrix",
+    icon: Bot,
+    className: "lg:translate-y-0 lg:scale-[0.99]",
+    zIndex: "z-10"
+  }
+];
+
+const stats = ["3+ Platforms", "AI-powered tools", "Growing ecosystem"];
+
 function HeroSection() {
   return (
-    <section className="pt-6 sm:pt-8">
+    <section className="pt-2 sm:pt-3">
       <PageContainer>
         <SectionReveal>
-          <div className="surface-card section-layer relative overflow-hidden bg-white/95 px-6 py-10 sm:px-10 sm:py-14">
-            <div className="hero-orb pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-accent/10 blur-3xl" />
-            <div className="hero-orb pointer-events-none absolute -bottom-20 left-1/3 h-56 w-56 rounded-full bg-teal-100/40 blur-3xl" />
-            <div className="hero-orb pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-gradient-to-br from-brand-accent/20 via-brand-accent/10 to-transparent blur-3xl" />
-            <div className="hero-orb pointer-events-none absolute right-16 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-gradient-to-tr from-brand-accent/14 via-brand-accent/8 to-transparent blur-3xl" />
-            <div className="hero-orb pointer-events-none absolute bottom-8 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full bg-gradient-to-t from-brand-accent/12 to-transparent blur-2xl" />
-            <div
-              className="pointer-events-none absolute inset-0 opacity-35"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to right, rgba(0,128,128,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,128,128,0.08) 1px, transparent 1px)",
-                backgroundSize: "34px 34px"
-              }}
-            />
-
-            <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
-              <div>
-                <p className="mb-4 inline-flex items-center rounded-full border border-brand-border bg-white px-4 py-1 text-xs font-semibold uppercase tracking-wider text-brand-accent">
-                  Cre8sphere Media
+          <div className="saas-shell relative overflow-hidden px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-12">
+            <div className="absolute right-[10%] top-1/2 hidden h-[280px] w-[280px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,128,128,0.08),transparent_72%)] lg:block" />
+            <div className="relative grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+              <div className="flex flex-col">
+                <p className="inline-flex w-fit items-center rounded-lg border border-black/5 bg-slate-50 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
+                  Exploring Tomorrow&apos;s Technology Today
                 </p>
-                <h1 className="max-w-3xl text-5xl font-semibold leading-[0.92] tracking-tight sm:text-6xl lg:text-6xl">
-                  Exploring Tomorrow&apos;s <span className="gradient-text">Technology</span>{" "}
-                  Today
+                <h1 className="mt-3 text-[2.45rem] font-bold leading-[0.98] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-[3.7rem]">
+                  Cre8sphere <span className="gradient-text">Media</span>
                 </h1>
-                <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-                  Cre8sphere Media is a modern digital media company focused on
-                  exploring the evolving world of technology, artificial intelligence,
-                  electric mobility, and digital innovation. Through our platforms and
-                  creative initiatives, we simplify complex ideas and make technology more
-                  accessible for everyone.
-                </p>
-                <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-                  <motion.a
-                    whileHover={{ y: -2, scale: 1.01 }}
-                    transition={{ duration: 0.2 }}
-                    href="#platforms"
-                    className="rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:bg-teal-700"
+                <div className="mt-5 max-w-[580px] space-y-3">
+                  <p className="text-base leading-7 text-slate-600 sm:text-lg">
+                    Cre8sphere Media is a digital media and AI product company focused on
+                    technology, artificial intelligence, and emerging innovation.
+                  </p>
+                  <p className="text-base leading-7 text-slate-600 sm:text-lg">
+                    We build and operate a growing ecosystem of platforms, products, and
+                    creative solutions.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 pt-6 sm:flex-row sm:items-center sm:gap-4">
+                  <a
+                    href="#ecosystem"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-teal-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-teal-700 hover:shadow-[0_10px_20px_rgba(13,148,136,0.18)]"
                   >
-                    Explore Our Platforms
-                  </motion.a>
-                  <motion.div whileHover={{ y: -2, scale: 1.01 }} transition={{ duration: 0.3 }}>
-                    <Link
-                      to="/about"
-                      className="inline-flex rounded-lg border border-brand-border bg-white px-6 py-3 text-sm font-semibold transition-all duration-200 hover:scale-105 hover:border-brand-accent hover:text-brand-accent"
+                    Explore Our Ecosystem
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="#products"
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-accent/30 hover:text-brand-accent hover:shadow-[0_8px_18px_rgba(15,23,42,0.06)]"
+                  >
+                    View Our Products
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+
+                <div className="flex flex-wrap gap-2.5 pt-5 sm:gap-3">
+                  {stats.map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center rounded-xl border border-gray-200 bg-slate-50 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-[0_3px_10px_rgba(15,23,42,0.03)]"
                     >
-                      Learn More About Us
-                    </Link>
-                  </motion.div>
+                      {item}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative"
-              >
-                <div className="rounded-xl border border-black/5 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-                  <div className="grid grid-cols-2 gap-4">
-                    <article className="rounded-xl bg-white p-4 shadow-md">
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
-                        Platforms
-                      </p>
-                      <p className="mt-2 text-3xl font-semibold tracking-tight">3+</p>
-                    </article>
-                    <article className="rounded-xl bg-white p-4 shadow-md">
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
-                        Coverage Areas
-                      </p>
-                      <p className="mt-2 text-3xl font-semibold tracking-tight">6+</p>
-                    </article>
-                    <article className="col-span-2 rounded-xl bg-white p-5 shadow-md">
-                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
-                        Focus
-                      </p>
-                      <p className="mt-2 text-base leading-7 text-slate-700">
-                        Technology, AI, Electric Mobility, and Digital Innovation.
-                      </p>
-                    </article>
-                  </div>
+              <div className="flex min-h-[380px] items-center justify-center lg:min-h-[470px]">
+                <div className="relative w-full max-w-[520px]">
+                  {ecosystemCards.map((card, index) => {
+                    const Icon = card.icon;
+                    const topOffsets = ["0px", "96px", "192px"];
+                    return (
+                      <motion.article
+                        key={card.title}
+                        animate={{ y: [0, -5, 0] }}
+                        transition={{ repeat: Infinity, duration: 6 + index, ease: "easeInOut", delay: index * 0.2 }}
+                        whileHover={{ y: -6, boxShadow: "0 14px 30px rgba(15,23,42,0.09)" }}
+                        className={`surface-card absolute left-0 right-0 mx-auto w-full max-w-[420px] p-6 transition-all duration-300 ${card.className} ${card.zIndex}`}
+                        style={{ top: topOffsets[index] }}
+                      >
+                        <div className="feature-chip h-11 w-11 rounded-xl">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="mt-4 text-xl font-semibold text-slate-900">{card.title}</h3>
+                        <p className="mt-2 text-sm leading-7 text-slate-600">{card.description}</p>
+                      </motion.article>
+                    );
+                  })}
                 </div>
-
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                  className="pointer-events-none absolute -right-4 -top-6 hidden rounded-xl border border-brand-border bg-white p-3 shadow-md md:block"
-                >
-                  <Cpu className="h-5 w-5 text-brand-accent" />
-                </motion.div>
-
-                <motion.svg
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
-                  viewBox="0 0 320 210"
-                  className="mt-6 h-48 w-full"
-                >
-                  <defs>
-                    <linearGradient id="heroGrid" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#008080" stopOpacity="0.35" />
-                      <stop offset="100%" stopColor="#008080" stopOpacity="0.08" />
-                    </linearGradient>
-                  </defs>
-                  <rect x="1" y="1" width="318" height="208" rx="18" fill="#fff" stroke="#E5E7EB" />
-                  <path d="M36 162L96 108L150 136L222 76L284 104" fill="none" stroke="url(#heroGrid)" strokeWidth="6" strokeLinecap="round" />
-                  <circle cx="96" cy="108" r="7" fill="#008080" />
-                  <circle cx="150" cy="136" r="7" fill="#008080" />
-                  <circle cx="222" cy="76" r="7" fill="#008080" />
-                </motion.svg>
-              </motion.div>
+              </div>
             </div>
           </div>
         </SectionReveal>

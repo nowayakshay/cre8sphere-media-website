@@ -54,9 +54,9 @@ function CookiePolicyPage() {
       </SectionReveal>
 
       <SectionReveal>
-        <article className="surface-card elevate-card section-layer bg-white/95 p-7 sm:p-8 shadow-md hover:-translate-y-1 hover:shadow-xl">
+        <article className="surface-card elevate-card rounded-xl p-7 sm:p-8">
           <h2 className="text-2xl font-semibold tracking-tight">Third-Party Cookies</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">
+          <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
             Some cookies may be set by third-party services, such as analytics tools,
             to help us understand and improve website performance.
           </p>
@@ -67,3 +67,5 @@ function CookiePolicyPage() {
 }
 
 export default CookiePolicyPage;
+
+

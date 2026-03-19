@@ -1,83 +1,63 @@
-﻿import { motion } from "framer-motion";
-import {
-  Grid2x2,
-  Smartphone,
-  BrainCircuit,
-  Car,
-  Orbit,
-  Rocket,
-  PenTool
-} from "lucide-react";
+﻿import { BrainCircuit, Car, Newspaper, Rocket, Smartphone } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "./SectionReveal";
 
 const coverage = [
   {
-    title: "Consumer Technology",
-    description:
-      "Smartphones, gadgets, apps, and the digital tools that shape everyday life.",
+    title: "Mobile Ecosystem",
+    description: "Smartphones, devices, apps, and the surrounding technology ecosystem.",
     icon: Smartphone
   },
   {
     title: "Artificial Intelligence",
-    description:
-      "AI tools, machine learning, and innovations transforming industries and society.",
+    description: "AI tools, platforms, and developments shaping how work and media evolve.",
     icon: BrainCircuit
   },
   {
     title: "Electric Vehicles",
-    description:
-      "EV technology, mobility innovation, and the shift toward sustainable transportation.",
+    description: "EV products, mobility innovation, and the transition to future transport.",
     icon: Car
   },
   {
-    title: "Emerging Technology",
-    description:
-      "Breakthrough innovations and technologies that will shape the future.",
-    icon: Orbit
-  },
-  {
     title: "Startups & Innovation",
-    description:
-      "Founders, ideas, and emerging companies driving the next wave of digital progress.",
+    description: "Emerging companies, ideas, and products driving digital progress.",
     icon: Rocket
   },
   {
-    title: "Creative Media",
-    description:
-      "Design, storytelling, and digital media strategies that connect technology with audiences.",
-    icon: PenTool
+    title: "Digital Media Trends",
+    description: "The formats, tools, and systems changing how content reaches audiences.",
+    icon: Newspaper
   }
 ];
 
 function CoverageSection() {
   return (
-    <section className="bg-white py-20" id="coverage">
+    <section className="py-16 sm:py-20">
       <PageContainer>
         <SectionReveal>
-          <div className="saas-shell section-layer p-7 sm:p-10">
-            <h2 className="inline-flex items-center gap-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              <Grid2x2 className="h-7 w-7 text-brand-accent" />
+          <div className="text-center">
+            <p className="inline-flex items-center rounded-lg border border-black/5 bg-slate-50 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-brand-accent">
+              Coverage Areas
+            </p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl">
               What We Cover
             </h2>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {coverage.map((item, index) => {
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+              We cover the technologies, products, and innovation systems shaping the
+              modern digital world.
+            </p>
+
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {coverage.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <motion.article
-                    key={item.title}
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.24 }}
-                    className={`elevate-card rounded-xl p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                      index % 3 === 0 ? "feature-tile" : "gradient-card"
-                    }`}
-                  >
-                    <div className="feature-chip h-10 w-10">
-                      <Icon className="h-5 w-5 text-white" />
+                  <article key={item.title} className="surface-card p-6 text-left">
+                    <div className="feature-chip h-11 w-11 rounded-xl">
+                      <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-3 text-lg font-semibold">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                  </motion.article>
+                    <h3 className="mt-5 text-xl font-semibold text-slate-900">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                  </article>
                 );
               })}
             </div>
@@ -89,10 +69,3 @@ function CoverageSection() {
 }
 
 export default CoverageSection;
-
-
-
-
-
-
-

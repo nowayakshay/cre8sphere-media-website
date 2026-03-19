@@ -18,7 +18,7 @@ function HomePage() {
         path="/"
       />
       <Navbar />
-      <main className="pb-8">
+      <main className="pb-8 pt-28 sm:pt-32">
         <HeroSection />
         <WhoWeAre />
         <PlatformsSection />
@@ -33,10 +33,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-
-
-
-
-
-
