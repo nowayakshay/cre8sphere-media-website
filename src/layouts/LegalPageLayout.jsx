@@ -9,7 +9,7 @@ function LegalPageLayout({ title, intro, updatedOn, seoTitle, seoDescription, se
     <div className="bg-brand-bg text-brand-text">
       <Seo title={seoTitle || title} description={seoDescription || intro} path={seoPath || "/"} />
       <Navbar />
-      <main className="pb-8 pt-28 sm:pt-32">
+      <main className="pb-8 pt-6 sm:pt-8">
         <PageContainer>
           <SectionReveal>
             <section className="surface-card section-layer px-6 py-12 text-center sm:px-10 sm:py-16">
@@ -36,5 +36,6 @@ function LegalPageLayout({ title, intro, updatedOn, seoTitle, seoDescription, se
 }
 
 export default LegalPageLayout;
+
 
 

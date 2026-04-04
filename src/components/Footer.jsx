@@ -4,10 +4,14 @@ import PageContainer from "../layouts/PageContainer";
 
 function Footer() {
   return (
-    <footer className="pb-8 pt-6" id="contact">
+    <footer className="pb-12 pt-10" id="contact">
       <PageContainer>
-        <div className="surface-card px-6 py-10 text-brand-text sm:px-8 sm:py-12">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative overflow-hidden rounded-[24px] border border-slate-200 bg-gradient-to-b from-white to-slate-50 p-10 text-brand-text shadow-[0_18px_34px_rgba(15,23,42,0.08)] sm:p-14">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(0,128,128,0.09),transparent_70%)]" />
+            <div className="absolute right-0 top-0 h-36 w-36 rounded-full bg-[radial-gradient(circle,rgba(15,23,42,0.06),transparent_70%)]" />
+          </div>
+          <div className="relative z-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-accent">
                 Company
@@ -15,6 +19,15 @@ function Footer() {
               <div className="mt-4 flex flex-col gap-2 text-sm text-slate-600">
                 <Link to="/about" className="transition-colors hover:text-brand-accent">
                   About
+                </Link>
+                <Link to="/join" className="transition-colors hover:text-brand-accent">
+                  Join Us
+                </Link>
+                <Link to="/careers" className="transition-colors hover:text-brand-accent">
+                  Careers
+                </Link>
+                <Link to="/faq" className="transition-colors hover:text-brand-accent">
+                  FAQ
                 </Link>
                 <Link to="/contact" className="transition-colors hover:text-brand-accent">
                   Contact
@@ -41,12 +54,12 @@ function Footer() {
 
             <div>
               <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-accent">
-                Products
+                Social
               </h3>
               <div className="mt-4 flex flex-col gap-2 text-sm text-slate-600">
-                <span>Repurplex</span>
-                <span>Refyn AI</span>
-                <span>Newstrix</span>
+                <a href="https://x.com/cre8spheremedia" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-accent">X</a>
+                <a href="https://www.instagram.com/cre8spheremedia" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-accent">Instagram</a>
+                <a href="https://www.linkedin.com/company/cre8sphere-media/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-brand-accent">LinkedIn</a>
               </div>
             </div>
 
@@ -71,8 +84,8 @@ function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 border-t border-black/5 pt-6 text-sm text-slate-500">
-            <p>© {new Date().getFullYear()} Cre8sphere Digital Media LLP. All rights reserved.</p>
+          <div className="relative z-10 mt-10 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
+            <p>© 2026 Cre8sphere Digital Media LLP. All rights reserved.</p>
             <p className="mt-2 inline-flex items-center gap-1">
               Crafted with Love
               <Heart className="h-4 w-4 text-brand-accent" fill="currentColor" />

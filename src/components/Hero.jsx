@@ -1,9 +1,9 @@
-﻿function Hero() {
+function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-brand-accent/10 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-[#F7F9FA] blur-3xl" />
+        <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,128,128,0.14),transparent_70%)]" />
+        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(15,23,42,0.06),transparent_72%)]" />
       </div>
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-24 md:grid-cols-2 md:items-center md:gap-16">
@@ -12,7 +12,7 @@
             Cre8sphere Media
           </p>
 
-          <h1 className="mt-6 text-4xl font-semibold tracking-tight text-brand-text sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-brand-text sm:text-5xl lg:text-[56px]">
             Exploring Tomorrow&apos;s Technology Today
           </h1>
 
@@ -25,13 +25,13 @@
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#platforms"
-              className="inline-flex items-center justify-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-hover"
+              className="inline-flex items-center justify-center rounded-[28px] bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-hover"
             >
               Explore Platforms
             </a>
             <a
               href="#about"
-              className="inline-flex items-center justify-center rounded-lg border border-brand-border bg-white px-6 py-3 text-sm font-semibold text-brand-text transition-colors duration-200 hover:border-brand-accent hover:text-brand-accent"
+              className="inline-flex items-center justify-center rounded-[28px] border border-brand-border bg-white px-6 py-3 text-sm font-semibold text-brand-text transition-colors duration-200 hover:border-brand-accent hover:text-brand-accent"
             >
               Learn More
             </a>
@@ -39,7 +39,7 @@
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <article className="rounded-2xl border border-brand-border bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <article className="rounded-[28px] border border-brand-border bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
               Platform Focus
             </p>
@@ -49,7 +49,7 @@
             </p>
           </article>
 
-          <article className="rounded-2xl border border-brand-border bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+          <article className="rounded-[28px] border border-brand-border bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
               Innovation Lens
             </p>
@@ -59,7 +59,7 @@
             </p>
           </article>
 
-          <article className="rounded-2xl border border-brand-border bg-brand-soft p-6 sm:col-span-2">
+          <article className="rounded-[28px] border border-brand-border bg-brand-soft p-6 sm:col-span-2">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent">
               Mission
             </p>

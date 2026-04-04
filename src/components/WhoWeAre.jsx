@@ -1,60 +1,46 @@
-﻿import { Lightbulb, Sparkles } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "./SectionReveal";
 
+const whoWeAreCards = [
+  "Technology + Creativity + Innovation",
+  "Digital media for modern audiences",
+  "Media Intelligence",
+  "Modern Formats",
+  "Connected Ideas"
+];
+
 function WhoWeAre() {
   return (
-    <section className="py-16 sm:py-20" id="ecosystem">
+    <section className="py-20 sm:py-28 bg-slate-50 border-y border-slate-100" id="about">
       <PageContainer>
         <SectionReveal>
-          <div className="text-center">
-            <p className="inline-flex items-center gap-2 rounded-lg border border-black/5 bg-slate-50 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-brand-accent">
-              <Sparkles className="h-3.5 w-3.5" />
-              Company Overview
-            </p>
-            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl">
-              Who We Are
-            </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
-              Cre8sphere Media is a modern digital media and product company focused on
-              making technology, AI, and emerging innovation easier to understand.
-            </p>
-            <p className="mx-auto mt-3 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
-              Through our media platforms, AI products, and creative systems, we are
-              building a structured ecosystem for the future of digital communication.
-            </p>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Text */}
+            <div className="text-left">
+              <h2 className="section-title text-slate-950">
+                Who We Are
+              </h2>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-600 sm:text-xl">
+                <p>
+                  Cre8sphere Media is a digital media company built on curiosity, creativity, and innovation. We believe the future of technology should not only be built - it should also be understood. Our platform simplifies complex ideas and makes technology more accessible for everyone.
+                </p>
+                <p className="font-medium text-slate-900">
+                  We are building a new-age digital ecosystem where media, technology, and AI-driven products work together to inform, simplify, and scale ideas.
+                </p>
+              </div>
+            </div>
 
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              <article className="surface-card p-6 text-left">
-                <div className="feature-chip h-11 w-11 rounded-xl">
-                  <Lightbulb className="h-5 w-5" />
+            {/* Right Visual / Cards */}
+            <div className="flex flex-col gap-4">
+              {whoWeAreCards.map((text, i) => (
+                <div key={i} className="surface-card bg-white border border-slate-200 p-5 rounded-[28px] flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1 shadow-sm">
+                  <div className="text-brand-accent flex-shrink-0">
+                    <CheckCircle2 className="w-6 h-6" />
+                  </div>
+                  <span className="text-lg font-bold text-slate-900">{text}</span>
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-slate-900">Media Division</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Covers technology, AI, mobility, and the digital ecosystem through
-                  platforms designed for modern readers.
-                </p>
-              </article>
-              <article className="surface-card p-6 text-left">
-                <div className="feature-chip h-11 w-11 rounded-xl">
-                  <Lightbulb className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-xl font-semibold text-slate-900">Creative Division</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Supports the ecosystem through brand systems, websites, storytelling,
-                  and digital execution via Origin8.
-                </p>
-              </article>
-              <article className="surface-card p-6 text-left">
-                <div className="feature-chip h-11 w-11 rounded-xl">
-                  <Lightbulb className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-xl font-semibold text-slate-900">Product Division</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Builds AI-powered systems for creators, media workflows, and future
-                  digital intelligence use cases.
-                </p>
-              </article>
+              ))}
             </div>
           </div>
         </SectionReveal>
@@ -64,3 +50,4 @@ function WhoWeAre() {
 }
 
 export default WhoWeAre;
+

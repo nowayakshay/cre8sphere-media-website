@@ -1,0 +1,24 @@
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 5067 modules transformed.
+
+[31m✗[39m Build failed in 2.97s
+[31merror during build:
+[31msrc/components/HeroSection.jsx (1:51): "Smartphone01Icon" is not exported by "node_modules/hugeicons-react/dist/esm/hugeicons-react.js", imported by "src/components/HeroSection.jsx".[31m
+file: [36mD:/cre8sphere new site/src/components/HeroSection.jsx:1:51[31m
+[33m
+1: import { ArrowRight01Icon, BotIcon, NewspaperIcon, Smartphone01Icon } from "hugeicons-react";
+                                                      ^
+2: import PageContainer from "../layouts/PageContainer";
+3: import SectionReveal from "./SectionReveal";
+[31m
+    at getRollupError (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/parseAst.js:402:41)
+    at error (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/parseAst.js:398:42)
+    at Module.error (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:17040:16)
+    at Module.traceVariable (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:17452:29)
+    at ModuleScope.findVariable (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:15070:39)
+    at Identifier.bind (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:5447:40)
+    at Property.bind (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)
+    at ObjectExpression.bind (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at ArrayExpression.bind (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:2825:28)
+    at VariableDeclarator.bind (file:///D:/cre8sphere%20new%20site/node_modules/rollup/dist/es/shared/node-entry.js:2829:23)[39m

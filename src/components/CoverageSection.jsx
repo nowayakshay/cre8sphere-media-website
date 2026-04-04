@@ -1,62 +1,59 @@
-﻿import { BrainCircuit, Car, Newspaper, Rocket, Smartphone } from "lucide-react";
+import { BrainCircuit, Car, Cpu, PenTool, Rocket, Smartphone } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "./SectionReveal";
 
 const coverage = [
   {
-    title: "Mobile Ecosystem",
-    description: "Smartphones, devices, apps, and the surrounding technology ecosystem.",
-    icon: Smartphone
+    title: "Consumer Technology",
+    icon: Smartphone,
+    iconClass: "bg-cyan-50 text-cyan-600 border-cyan-100"
   },
   {
     title: "Artificial Intelligence",
-    description: "AI tools, platforms, and developments shaping how work and media evolve.",
-    icon: BrainCircuit
+    icon: BrainCircuit,
+    iconClass: "bg-teal-50 text-teal-600 border-teal-100"
   },
   {
     title: "Electric Vehicles",
-    description: "EV products, mobility innovation, and the transition to future transport.",
-    icon: Car
+    icon: Car,
+    iconClass: "bg-emerald-50 text-emerald-600 border-emerald-100"
+  },
+  {
+    title: "Emerging Technology",
+    icon: Cpu,
+    iconClass: "bg-sky-50 text-sky-600 border-sky-100"
   },
   {
     title: "Startups & Innovation",
-    description: "Emerging companies, ideas, and products driving digital progress.",
-    icon: Rocket
+    icon: Rocket,
+    iconClass: "bg-orange-50 text-orange-600 border-orange-100"
   },
   {
-    title: "Digital Media Trends",
-    description: "The formats, tools, and systems changing how content reaches audiences.",
-    icon: Newspaper
+    title: "Creative Media",
+    icon: PenTool,
+    iconClass: "bg-teal-50 text-teal-600 border-teal-100"
   }
 ];
 
 function CoverageSection() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-20 sm:py-28 border-y border-slate-100 bg-slate-50">
       <PageContainer>
         <SectionReveal>
           <div className="text-center">
-            <p className="inline-flex items-center rounded-lg border border-black/5 bg-slate-50 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-brand-accent">
-              Coverage Areas
-            </p>
-            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl">
+            <h2 className="section-title text-slate-950">
               What We Cover
             </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
-              We cover the technologies, products, and innovation systems shaping the
-              modern digital world.
-            </p>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-16 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
               {coverage.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <article key={item.title} className="surface-card p-6 text-left">
-                    <div className="feature-chip h-11 w-11 rounded-xl">
-                      <Icon className="h-5 w-5" />
+                  <article key={item.title} className="surface-card flex flex-col items-center justify-center bg-white p-8 text-center transition-transform duration-300 hover:-translate-y-1">
+                    <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-[28px] border ${item.iconClass}`}>
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-5 text-xl font-semibold text-slate-900">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.description}</p>
+                    <h3 className="text-lg font-bold tracking-tight text-slate-900">{item.title}</h3>
                   </article>
                 );
               })}
@@ -69,3 +66,4 @@ function CoverageSection() {
 }
 
 export default CoverageSection;
+

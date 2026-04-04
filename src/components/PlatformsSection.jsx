@@ -6,41 +6,41 @@ const platforms = [
   {
     title: "GizmoGeek Hub",
     website: "https://gizmogeekhub.com/",
-    description: "Consumer tech insights, smartphone reviews, and ecosystem updates.",
-    icon: Smartphone
+    description: "Consumer technology platform",
+    icon: Smartphone,
+    iconClass: "bg-cyan-50 text-cyan-600 border-cyan-100"
   },
   {
     title: "TechOrbis",
     website: "https://techorbis.in/",
-    description: "Focused on AI, electric vehicles, and future technology trends.",
-    icon: Newspaper
+    description: "AI, EV, future technology",
+    icon: Newspaper,
+    iconClass: "bg-emerald-50 text-emerald-600 border-emerald-100"
   },
   {
-    title: "Origin8 by Cre8sphere",
+    title: "Origin8",
     website: "https://origin8agency.in/",
-    description: "Creative and digital execution for brand, content, and web experiences.",
-    icon: PenTool
+    description: "Creative studio for branding and digital storytelling",
+    icon: PenTool,
+    iconClass: "bg-teal-50 text-teal-600 border-teal-100"
   }
 ];
 
 function PlatformsSection() {
   return (
-    <section className="py-16 sm:py-20" id="platforms">
+    <section className="py-20 sm:py-28" id="platforms">
       <PageContainer>
         <SectionReveal>
           <div className="text-center">
-            <p className="inline-flex items-center rounded-lg border border-black/5 bg-slate-50 px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-brand-accent">
-              Media Platforms
-            </p>
-            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-4xl lg:text-[36px]">
               Our Platforms
             </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
               The Cre8sphere Media ecosystem spans editorial brands and creative
               systems designed for modern technology audiences.
             </p>
 
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <div className="mt-16 grid gap-6 md:grid-cols-3">
               {platforms.map((platform) => {
                 const Icon = platform.icon;
                 return (
@@ -49,16 +49,19 @@ function PlatformsSection() {
                     href={platform.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="surface-card elevate-card block p-6 text-left"
+                    className="surface-card elevate-card block p-8 md:p-10 text-left"
                   >
-                    <div className="feature-chip h-11 w-11 rounded-xl">
-                      <Icon className="h-5 w-5" />
+                    <div className={`mb-0 flex h-12 w-12 items-center justify-center rounded-[14px] border ${platform.iconClass}`}>
+                      <Icon className="h-6 w-6" />
                     </div>
-                    <div className="mt-5 flex items-start justify-between gap-3">
-                      <h3 className="text-xl font-semibold text-slate-900">{platform.title}</h3>
-                      <ArrowUpRight className="h-4 w-4 shrink-0 text-brand-accent" />
+                    <div className="mt-6 flex items-start justify-between gap-3">
+                      <h3 className="text-xl sm:text-[22px] font-semibold tracking-tight leading-[1.25] text-slate-900 group-hover:text-brand-accent transition-colors">{platform.title}</h3>
+                      <div className="flex items-center gap-1 text-sm font-semibold text-brand-accent">
+                        <span>Visit Website</span>
+                        <ArrowUpRight className="h-4 w-4 shrink-0" />
+                      </div>
                     </div>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">{platform.description}</p>
+                    <p className="mt-4 text-base leading-relaxed text-slate-600">{platform.description}</p>
                   </a>
                 );
               })}
@@ -71,3 +74,4 @@ function PlatformsSection() {
 }
 
 export default PlatformsSection;
+
