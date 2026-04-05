@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   Bot,
@@ -22,54 +23,83 @@ const refynFeatures = [
 
 const repurplexFlow = ["Input content", "AI transforms", "Get multiple outputs"];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
 function InnovationToolsSection() {
   return (
-    <section className="py-20 sm:py-28 bg-white" id="products">
+    <section className="py-10 sm:py-20 bg-white" id="products">
       <PageContainer>
         <SectionReveal>
           <div className="text-left">
-            <h2 className="section-title text-slate-950">
+            <h2 className="text-slate-950">
               Cre8sphere AI Studio
             </h2>
-            <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+            <p className="mt-4 readable-text">
               Building intelligent tools that simplify content creation and digital workflows.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
-            <article className="surface-card rounded-[28px] border border-slate-200 bg-white p-8 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_26px_rgba(15,23,42,0.09)] md:p-10">
-              <div className="mb-6 flex items-center justify-end">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-[28px] border border-teal-100 bg-teal-50 text-teal-600">
-                  <Workflow className="h-5 w-5" />
+          <div className="mt-16 grid gap-16 lg:grid-cols-2">
+            <motion.article 
+              variants={itemVariants}
+              className="relative text-left"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080]">
+                  <Workflow className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900">Repurplex</h3>
+                  <p className="text-sm font-semibold text-[#008080] uppercase tracking-wider">AI Content Engine</p>
                 </div>
               </div>
 
-              <h3 className="text-3xl font-semibold tracking-tight text-slate-900">Repurplex</h3>
-              <p className="mt-4 text-base leading-7 text-slate-600">
+              <p className="mt-4 text-[17px] leading-relaxed text-slate-600">
                 Repurplex is an AI-powered content transformation engine that converts a single article, blog, or YouTube link into multiple platform-ready content formats.
               </p>
-              <p className="mt-3 text-base font-medium leading-7 text-slate-900">
-                Turn one piece of content into posts for X, LinkedIn, newsletters, summaries, and more.
-              </p>
+              
+              <div className="mt-8 space-y-4">
+                <p className="font-bold text-slate-900">Key Capabilities:</p>
+                <ul className="grid gap-3 sm:grid-cols-1">
+                  {repurplexFeatures.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center gap-3 text-slate-700"
+                    >
+                      <CheckCircle2 className="h-5 w-5 text-[#008080]" />
+                      <span className="font-medium">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {repurplexFeatures.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-center gap-2 rounded-[28px] border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"
-                  >
-                    <CheckCircle2 className="h-4 w-4 text-teal-600" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-7 rounded-[28px] border border-slate-200 bg-slate-50 p-5">
-                <p className="text-sm font-semibold text-slate-700">How it works</p>
-                <div className="mt-3 grid gap-2 sm:grid-cols-3">
-                  {repurplexFlow.map((step) => (
-                    <div key={step} className="rounded-[28px] border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700">
-                      {step}
+              <div className="mt-10 rounded-2xl border border-slate-100 bg-slate-50/50 p-6">
+                <p className="text-sm font-bold text-slate-900 border-b border-slate-200/60 pb-3 mb-4">Content Lifecycle</p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {repurplexFlow.map((step, idx) => (
+                    <div key={idx} className="flex flex-col gap-1">
+                      <span className="text-[10px] font-bold text-[#008080] uppercase">Step {idx + 1}</span>
+                      <span className="text-sm font-semibold text-slate-700">{step}</span>
                     </div>
                   ))}
                 </div>
@@ -79,45 +109,58 @@ function InnovationToolsSection() {
                 href="https://repurplex.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex h-11 items-center justify-center gap-2 rounded-[28px] bg-slate-900 px-6 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800"
+                className="btn-premium btn-primary-glow group mt-10 inline-flex h-14 items-center justify-center gap-3 rounded-[28px] bg-[#008080] px-10 text-base font-bold text-white hover:bg-[#006666]"
               >
-                Try Repurplex
-                <ArrowRight className="h-4 w-4" />
+                Launch Repurplex
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
-            </article>
+            </motion.article>
 
-            <article className="surface-card rounded-[28px] border border-slate-200 bg-white p-7 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_22px_rgba(15,23,42,0.08)] md:p-8">
-              <div className="mb-5 flex items-center justify-end">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-[28px] border border-violet-100 bg-violet-50 text-violet-600">
-                  <Bot className="h-5 w-5" />
+            <motion.article 
+              variants={itemVariants}
+              className="relative text-left border-t border-slate-100 pt-16 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-16 font-body"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080]">
+                  <Bot className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900">Refyn</h3>
+                  <p className="text-sm font-semibold text-[#008080] uppercase tracking-wider">AI Humanizer</p>
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-[22px] font-semibold tracking-tight leading-[1.25] text-slate-900">
-                Refyn
-              </h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-                Refyn improves AI-generated text by making it more natural, clear, and human.
+              <p className="mt-4 text-[17px] leading-relaxed text-slate-600">
+                Refyn improves AI-generated text by making it more natural, clear, and human, ensuring high engagement across all digital platforms.
               </p>
 
-              <ul className="mt-5 space-y-3">
-                {refynFeatures.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm font-medium text-slate-700">
-                    <Sparkles className="h-4 w-4 text-teal-600" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-8 space-y-6">
+                <p className="font-bold text-slate-900 text-lg">Coming Soon Features:</p>
+                <ul className="space-y-4">
+                  {refynFeatures.map((feature) => (
+                    <li key={feature} className="flex items-center gap-4 text-slate-700">
+                      <div className="h-1.5 w-1.5 rounded-full bg-[#008080]" />
+                      <span className="text-base font-medium">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-12 p-8 rounded-2xl bg-[#F2F9F9]/50 border border-[#008080]/10 border-dashed">
+                <p className="text-slate-600 text-sm italic">
+                  "Building a future where AI content feels authentically human."
+                </p>
+              </div>
 
               <button
                 type="button"
-                className="mt-7 inline-flex h-11 items-center justify-center gap-2 rounded-[28px] border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700"
-                aria-disabled="true"
+                className="btn-premium mt-10 inline-flex h-14 items-center justify-center gap-3 rounded-[28px] border-2 border-slate-200 bg-white px-10 text-base font-bold text-slate-400 cursor-not-allowed"
+                disabled
               >
-                Try Refyn
-                <ArrowRight className="h-4 w-4" />
+                Stay Tuned
+                <Sparkles className="h-5 w-5 text-[#008080]/40" />
               </button>
-            </article>
+            </motion.article>
           </div>
         </SectionReveal>
       </PageContainer>

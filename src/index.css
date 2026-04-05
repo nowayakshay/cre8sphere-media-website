@@ -1,16 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --brand-accent: #008080;
-  --brand-hover: #0a6d6d;
-  --brand-bg: #f8fafb;
-  --brand-border: #e5e7eb;
-  --brand-text: #0f172a;
-  --brand-muted: #64748b;
+  --brand-accent:  #008080;
+  --brand-hover:   #006666;
+  --brand-light:   #F2F9F9;
+  --brand-soft:    rgba(0, 128, 128, 0.10);
+  --brand-bg:      #FFFFFF;
+  --brand-alt:     #F9FAFB;
+  --brand-border:  #E5E7EB;
+  --brand-text:    #000000;
+  --brand-body:    #333333;
+  --brand-muted:   #6B7280;
 }
 
 html,
@@ -26,37 +30,12 @@ html {
 
 body {
   margin: 0;
-  color: var(--brand-text);
+  color: var(--brand-body);
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  line-height: 1.6;
-  background:
-    radial-gradient(circle at 12% 10%, rgba(0, 128, 128, 0.06), transparent 34%),
-    radial-gradient(circle at 88% 74%, rgba(0, 128, 128, 0.04), transparent 38%),
-    #f8fafb;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(15, 23, 42, 0.012) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.012) 1px, transparent 1px);
-  background-size: 52px 52px;
-  opacity: 0.5;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 76% 20%, rgba(0, 128, 128, 0.045), transparent 34%),
-    radial-gradient(circle at 24% 84%, rgba(0, 128, 128, 0.03), transparent 34%);
-  opacity: 0.4;
+  line-height: 1.7;
+  background: var(--brand-bg);
+  @apply sm:text-[18px];
 }
 
 h1,
@@ -66,6 +45,21 @@ h4,
 h5,
 h6 {
   font-family: "Sora", sans-serif;
+  color: #000000;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  @apply text-[32px] sm:text-[48px] font-bold;
+}
+
+h2 {
+  @apply text-[24px] sm:text-[32px] font-semibold;
+}
+
+h3 {
+  @apply text-[20px] sm:text-[24px] font-medium;
 }
 
 p,
@@ -81,7 +75,9 @@ span {
 
 p {
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.7;
+  color: var(--brand-body);
+  @apply sm:text-[18px];
 }
 
 @layer utilities {
@@ -92,6 +88,16 @@ p {
   .font-body {
     font-family: "Inter", sans-serif;
   }
+
+  .readable-text {
+    max-width: 65ch;
+  }
+
+  .subtext {
+    @apply text-[14px] sm:text-[15px];
+    color: var(--brand-muted);
+    opacity: 0.85;
+  }
 }
 
 * {
@@ -100,6 +106,15 @@ p {
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
 }
 
 .animate-float {
@@ -126,7 +141,7 @@ p {
 .soft-panel {
   border: 1px solid rgba(15, 23, 42, 0.08);
   background: #ffffff;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.055);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 .surface-card,
 .saas-shell {
@@ -183,9 +198,9 @@ p {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background: #008080;
+  background: var(--brand-accent);
   color: #ffffff;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .accent-grid {
@@ -205,10 +220,15 @@ p {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #008080, #2bb8b0);
+  background: linear-gradient(90deg, #008080, #00a0a0);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  margin-top: -0.1em;
+  margin-bottom: -0.1em;
+  display: inline-block;
 }
 
 .surface-card,
@@ -310,11 +330,10 @@ p {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
-  width: min(86%, 980px);
+  left: 0;
+  right: 0;
   height: 1px;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0));
+  background: rgba(15, 23, 42, 0.06);
   pointer-events: none;
 }
 
@@ -323,15 +342,15 @@ p {
 .internal-page .gradient-card,
 .internal-page .feature-tile,
 .internal-page .soft-panel {
-  border: 1px solid rgba(15, 23, 42, 0.09);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: none;
 }
 
 .internal-page .surface-card:hover,
 .internal-page .gradient-card:hover,
 .internal-page .feature-tile:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
 }
 
 .internal-page .feature-chip {
@@ -339,12 +358,12 @@ p {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24), 0 8px 16px rgba(0, 128, 128, 0.16);
 }
 
-.internal-page a[href]:hover {
-  color: #0a6d6d;
+.internal-page a[href]:not([class*="bg-"]):not([class*="inline-flex"]):not([class*="btn"]):hover {
+  color: var(--brand-hover);
 }
 
 .internal-page h2 {
-  color: #0b132b;
+  color: #000000;
 }
 
 .internal-page .platform-gizmo-highlight {
@@ -380,23 +399,6 @@ p {
 
 main > section {
   position: relative;
-}
-
-main > section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 10% 12%, rgba(0, 128, 128, 0.035), transparent 35%),
-    radial-gradient(circle at 92% 84%, rgba(15, 23, 42, 0.03), transparent 32%);
-  opacity: 0.65;
-}
-
-main > section:nth-of-type(even)::before {
-  background:
-    radial-gradient(circle at 82% 16%, rgba(0, 128, 128, 0.04), transparent 36%),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.012), rgba(15, 23, 42, 0));
 }
 
 main > section > * {
@@ -454,11 +456,28 @@ main > section > * {
 a,
 button {
   transition:
-    color 200ms ease,
-    background-color 200ms ease,
-    border-color 200ms ease,
-    transform 200ms ease,
-    box-shadow 200ms ease;
+    color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Standardized Motion & Spacing --- */
+section {
+  @apply py-10 sm:py-20; /* 40px mobile, 80px desktop */
+}
+
+.btn-premium {
+  @apply inline-flex items-center justify-center transition-all duration-300 ease-out;
+}
+
+.btn-premium:hover {
+  @apply scale-[1.02] -translate-y-0.5;
+}
+
+.btn-premium:active {
+  @apply scale-[0.98];
 }
 
 h1,
@@ -467,47 +486,17 @@ h3 {
   letter-spacing: -0.025em;
 }
 
-/* Homepage premium adaptation (reference-inspired, brand-aligned) */
-.home-page .home-main-canvas {
-  width: calc(100% - 40px);
-  max-width: 1220px;
-  margin: 0 auto 24px;
-  background: #f6f7f8;
-  border: 1px solid #e5e7eb;
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-}
-
-.home-page .home-main-canvas > section {
-  border-top: 1px solid rgba(15, 23, 42, 0.06);
-}
-
-.home-page .home-main-canvas > section:first-child {
-  border-top: 0;
+/* Homepage layout — full-width unified system */
+.home-page {
+  background: #ffffff;
 }
 
 .home-page .hero-showcase {
   position: relative;
   overflow: hidden;
-  border-radius: 24px !important;
   background: transparent;
   border: 0 !important;
   box-shadow: none !important;
-  padding-top: 20px !important;
-  min-height: 620px;
-}
-
-.home-page .hero-showcase::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.018) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.018) 1px, transparent 1px);
-  background-size: 44px 44px;
-  opacity: 0.58;
 }
 
 .home-page .hero-ribbon {
@@ -555,20 +544,7 @@ h3 {
   position: relative;
 }
 
-.home-page section:nth-of-type(odd) {
-  background: #f8f9fa;
-}
-
-.home-page section:nth-of-type(even) {
-  background: #f5f7f9;
-}
-
 @media (max-width: 1024px) {
-  .home-page .home-main-canvas {
-    width: calc(100% - 20px);
-    border-radius: 24px;
-  }
-
   .home-page .hero-ribbon-a {
     width: 500px;
     height: 100px;
@@ -579,9 +555,5 @@ h3 {
     width: 420px;
     height: 80px;
     right: -180px;
-  }
-
-  .home-page .hero-showcase {
-    min-height: auto;
   }
 }

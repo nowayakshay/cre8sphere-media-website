@@ -18,10 +18,10 @@ function WhoWeAre() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Text */}
             <div className="text-left">
-              <h2 className="section-title text-slate-950">
+              <h2>
                 Who We Are
               </h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-600 sm:text-xl">
+              <div className="mt-6 readable-text">
                 <p>
                   Cre8sphere Media is a digital media company built on curiosity, creativity, and innovation. We believe the future of technology should not only be built - it should also be understood. Our platform simplifies complex ideas and makes technology more accessible for everyone.
                 </p>
@@ -38,7 +38,7 @@ function WhoWeAre() {
                   <div className="text-brand-accent flex-shrink-0">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <span className="text-lg font-bold text-slate-900">{text}</span>
+                  <span className="font-bold text-slate-900">{text}</span>
                 </div>
               ))}
             </div>

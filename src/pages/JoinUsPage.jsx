@@ -68,19 +68,22 @@ function JoinUsPage() {
         />
 
         {/* Who This Is For */}
-        <section className="py-16 sm:py-20">
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-[28px] font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-[34px] mb-10">Who This Is For</h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mb-12">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
+                <h2>Who This Is For</h2>
+              </div>
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {audience.map((item) => (
-                  <article key={item.title} className="surface-card p-7 text-left">
-                    <div className="feature-chip h-11 w-11 rounded-[28px]">
+                  <div key={item.title} className="flex flex-col gap-4">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080]">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 text-lg font-bold text-slate-900">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.description}</p>
-                  </article>
+                    <h3>{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{item.description}</p>
+                  </div>
                 ))}
               </div>
             </SectionReveal>
@@ -88,49 +91,54 @@ function JoinUsPage() {
         </section>
 
         {/* Ways to Work / What You Get */}
-        <section className="pb-16 sm:pb-20">
+        <section className="py-20 sm:py-24 bg-slate-50/60">
           <PageContainer>
             <SectionReveal>
-              <div className="grid gap-6 lg:grid-cols-2">
-                <article className="surface-card p-8">
-                  <h2 className="text-2xl font-bold tracking-tight text-slate-950">Ways to Work With Us</h2>
-                  <ul className="mt-6 space-y-4">
+              <div className="grid gap-12 lg:grid-cols-2">
+                <div>
+                   <div className="mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                  <h2>Ways to Work With Us</h2>
+                  <ul className="mt-8 space-y-5">
                     {waysToWork.map((item) => (
                       <li key={item} className="flex items-start gap-3 text-slate-700">
-                        <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-teal-500" />
+                        <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#008080]" />
                         <span className="text-base">{item}</span>
                       </li>
                     ))}
                   </ul>
-                </article>
-                <article className="surface-card p-8 bg-teal-50 border-teal-100">
-                  <h2 className="text-2xl font-bold tracking-tight text-slate-950">What You Get</h2>
-                  <ul className="mt-6 space-y-4">
+                </div>
+                <div>
+                  <div className="mb-8 h-1 w-12 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
+                  <h2>What You Get</h2>
+                  <ul className="mt-8 space-y-5">
                     {whatYouGet.map((item) => (
                       <li key={item} className="flex items-start gap-3 text-slate-700">
-                        <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-teal-600" />
+                        <span className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-teal-600" />
                         <span className="text-base font-medium">{item}</span>
                       </li>
                     ))}
                   </ul>
-                </article>
+                </div>
               </div>
             </SectionReveal>
           </PageContainer>
         </section>
 
         {/* How It Works */}
-        <section className="pb-16 sm:pb-20">
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-[28px] font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-[34px] mb-10">How It Works</h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mb-12">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>How It Works</h2>
+              </div>
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {steps.map((step) => (
-                  <article key={step.num} className="surface-card p-7 text-left">
-                    <span className="text-4xl font-bold text-teal-100">{step.num}</span>
-                    <h3 className="mt-4 text-lg font-bold text-slate-900">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.desc}</p>
-                  </article>
+                  <div key={step.num} className="flex flex-col gap-3">
+                    <span className="text-4xl font-bold text-[#008080]/10">{step.num}</span>
+                    <h3>{step.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{step.desc}</p>
+                  </div>
                 ))}
               </div>
             </SectionReveal>
@@ -138,26 +146,25 @@ function JoinUsPage() {
         </section>
 
         {/* CTA */}
-        <section className="pb-16 sm:pb-24">
+        <section className="py-20 sm:py-24 text-center bg-slate-50/60">
           <PageContainer>
             <SectionReveal>
-              <div className="surface-card bg-slate-50 border-slate-200 p-10 sm:p-14 text-center rounded-[28px]">
-                <h2 className="text-[28px] font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-[34px]">
-                  Start Your Journey with Cre8sphere
-                </h2>
-                <p className="mt-4 text-base text-slate-600 max-w-xl mx-auto">
+              <div className="max-w-xl mx-auto">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-teal-600 to-teal-400 mx-auto" />
+                <h2>Start Your Journey with Cre8sphere</h2>
+                <p className="mt-6 readable-text">
                   Submit your details and let us know how you want to collaborate.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                   <a
                     href="mailto:contact@cre8sphere.in?subject=Collaboration%20Inquiry"
-                    className="inline-flex items-center justify-center gap-2 rounded-[28px] bg-teal-600 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-teal-700"
+                    className="inline-flex items-center justify-center gap-2 rounded-[28px] bg-[#008080] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#006666] hover:text-white"
                   >
                     Apply to Collaborate <ArrowRight className="h-4 w-4" />
                   </a>
                   <a
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-[28px] border border-slate-200 bg-white px-7 py-3 text-sm font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-teal-300 hover:text-teal-600"
+                    className="inline-flex items-center justify-center gap-2 rounded-[28px] border border-slate-200 bg-white px-7 py-3 text-sm font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008080] hover:border-[#008080] hover:text-white"
                   >
                     Contact Us <ArrowRight className="h-4 w-4" />
                   </a>
@@ -173,5 +180,3 @@ function JoinUsPage() {
 }
 
 export default JoinUsPage;
-
-

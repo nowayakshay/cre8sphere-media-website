@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -51,7 +51,7 @@ const faqGroups = [
       },
       {
         q: "What tools are you building?",
-        a: "Beyond Repurplex, we are building Refyn AI and Newstrix - tools designed for content creators, founders, and media teams."
+        a: "Beyond Repurplex, we are building Refyn AI and Newstrix — tools designed for content creators, founders, and media teams."
       }
     ]
   },
@@ -82,7 +82,7 @@ const faqGroups = [
     questions: [
       {
         q: "How can I contact Cre8sphere Media?",
-        a: "You can reach us at contact@cre8sphere.in, or via our Contact page. We typically respond within 24-48 hours."
+        a: "You can reach us at contact@cre8sphere.in, or via our Contact page. We typically respond within 24–48 hours."
       }
     ]
   }
@@ -94,10 +94,10 @@ function AccordionItem({ q, a }) {
     <div className="border-b border-slate-100 last:border-0">
       <button
         onClick={() => setOpen((p) => !p)}
-        className="flex w-full items-center justify-between py-5 text-left text-base font-semibold text-slate-900 hover:text-teal-600 transition-colors"
+        className="flex w-full items-center justify-between py-5 text-left text-base font-semibold text-slate-900 hover:text-[#008080] transition-colors"
       >
         <span>{q}</span>
-        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-slate-400 transition-transform duration-300 ${open ? "rotate-180 text-teal-500" : ""}`} />
+        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-slate-400 transition-transform duration-300 ${open ? "rotate-180 text-[#008080]" : ""}`} />
       </button>
       <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96 pb-5" : "max-h-0"}`}>
         <p className="text-base leading-relaxed text-slate-600">{a}</p>
@@ -118,22 +118,24 @@ function FaqPage() {
       <main className="pb-8 pt-6 sm:pt-8">
         <PageHeroSection
           title="Frequently Asked Questions"
-          description="Everything you need to know about Cre8sphere Media - our platforms, products, and how to work with us."
+          description="Everything you need to know about Cre8sphere Media — our platforms, products, and how to work with us."
         />
 
-        <section className="py-16 sm:py-20 bg-slate-50">
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <div className="max-w-3xl mx-auto space-y-8">
+              <div className="max-w-3xl mx-auto space-y-14">
                 {faqGroups.map((group) => (
-                  <article key={group.category} className="surface-card border border-slate-200 bg-white p-6 sm:p-8">
-                    <h2 className="mb-2 text-xs font-bold tracking-[0.18em] uppercase text-teal-600">
+                  <div key={group.category}>
+                    <p className="mb-4 text-xs font-bold tracking-[0.18em] uppercase text-[#008080]">
                       {group.category}
-                    </h2>
-                    {group.questions.map((item) => (
-                      <AccordionItem key={item.q} q={item.q} a={item.a} />
-                    ))}
-                  </article>
+                    </p>
+                    <div className="border-t border-slate-200">
+                      {group.questions.map((item) => (
+                        <AccordionItem key={item.q} q={item.q} a={item.a} />
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </SectionReveal>
@@ -146,4 +148,3 @@ function FaqPage() {
 }
 
 export default FaqPage;
-

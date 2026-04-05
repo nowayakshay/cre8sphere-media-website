@@ -8,7 +8,7 @@ import Seo from "../components/Seo";
 
 const whyWork = [
   { title: "Build from 0 to 1", desc: "Work on products and platforms from early stages." },
-  { title: "Real Platforms & Products", desc: "Not just concepts - real, live platforms with real audiences." },
+  { title: "Real Platforms & Products", desc: "Not just concepts — real, live platforms with real audiences." },
   { title: "Media + AI Exposure", desc: "Gain hands-on experience across both media and AI product spaces." },
   { title: "Fast Learning Environment", desc: "Move quickly, learn deeply, and take ownership." }
 ];
@@ -50,19 +50,22 @@ function CareersPage() {
         />
 
         {/* Why Work With Us */}
-        <section className="py-16 sm:py-20">
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-[28px] font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-[34px] mb-10">Why Work With Us</h2>
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="mb-12">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>Why Work With Us</h2>
+              </div>
+              <div className="grid gap-8 sm:grid-cols-2">
                 {whyWork.map((item) => (
-                  <article key={item.title} className="surface-card p-7 flex items-start gap-5">
-                    <span className="h-2.5 w-2.5 mt-2 flex-shrink-0 rounded-full bg-teal-500" />
+                  <div key={item.title} className="flex items-start gap-4">
+                    <span className="h-2 w-2 mt-3 flex-shrink-0 rounded-full bg-[#008080]" />
                     <div>
-                      <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                      <h3>{item.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
                     </div>
-                  </article>
+                  </div>
                 ))}
               </div>
             </SectionReveal>
@@ -70,19 +73,22 @@ function CareersPage() {
         </section>
 
         {/* Culture */}
-        <section className="pb-16 sm:pb-20">
+        <section className="py-20 sm:py-24 bg-slate-50/60">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-[28px] font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-[34px] mb-10">Our Culture</h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mb-12">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>Our Culture</h2>
+              </div>
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 {culture.map((item) => (
-                  <article key={item.title} className="surface-card p-7 text-left">
-                    <div className="feature-chip h-11 w-11 rounded-[28px]">
+                  <div key={item.title} className="flex flex-col gap-4">
+                    <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080]">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-5 text-lg font-bold text-slate-900">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-                  </article>
+                    <h3>{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{item.desc}</p>
+                  </div>
                 ))}
               </div>
             </SectionReveal>
@@ -90,33 +96,40 @@ function CareersPage() {
         </section>
 
         {/* What We're Building */}
-        <section className="pb-16 sm:pb-20">
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-[28px] font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-[34px] mb-10">What We're Building</h2>
-              <div className="grid gap-5 sm:grid-cols-3">
+              <div className="mb-12">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>What We&apos;re Building</h2>
+              </div>
+              <div className="grid gap-10 sm:grid-cols-3">
                 {building.map((group) => (
-                  <article key={group.label} className="surface-card p-7">
-                    <p className="text-xs font-bold tracking-widest uppercase text-teal-600 mb-4">{group.label}</p>
-                    <ul className="space-y-2">
+                  <div key={group.label}>
+                    <p className="mb-4 text-xs font-bold tracking-widest uppercase text-[#008080]">{group.label}</p>
+                    <ul className="space-y-3">
                       {group.items.map((item) => (
-                        <li key={item} className="text-base font-semibold text-slate-900">{item}</li>
+                        <li key={item} className="flex items-center gap-3 text-base font-semibold text-slate-900">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#008080] flex-shrink-0" />
+                          {item}
+                        </li>
                       ))}
                     </ul>
-                  </article>
+                  </div>
                 ))}
               </div>
             </SectionReveal>
           </PageContainer>
         </section>
 
-        {/* Open Roles */}
-        <section className="pb-16 sm:pb-20">
+        {/* No Open Roles */}
+        <section className="py-20 sm:py-24 bg-slate-50/60">
           <PageContainer>
             <SectionReveal>
-              <div className="surface-card p-10 sm:p-12 text-center border-dashed border-2 border-slate-200 bg-slate-50/60">
-                <h2 className="text-2xl font-bold tracking-tight text-slate-950">No Open Roles Currently</h2>
-                <p className="mt-4 max-w-xl mx-auto text-base leading-relaxed text-slate-600">
+              <div className="max-w-2xl mx-auto text-center">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0] mx-auto" />
+                <h2>No Open Roles Currently</h2>
+                <p className="mt-6 readable-text">
                   We are not actively hiring right now, but we are always looking for talented individuals who align with our vision.
                 </p>
               </div>
@@ -125,10 +138,13 @@ function CareersPage() {
         </section>
 
         {/* Future Roles */}
-        <section className="pb-16 sm:pb-20">
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <h2 className="text-[28px] font-semibold tracking-tight leading-[1.2] text-slate-950 sm:text-[34px] mb-8">Future Roles We're Planning</h2>
+              <div className="mb-10">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>Future Roles We&apos;re Planning</h2>
+              </div>
               <div className="flex flex-wrap gap-3">
                 {futureRoles.map((role) => (
                   <span key={role} className="rounded-[28px] border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm">
@@ -141,24 +157,25 @@ function CareersPage() {
         </section>
 
         {/* Apply CTA */}
-        <section className="pb-16 sm:pb-24">
+        <section className="py-20 sm:py-24 text-center">
           <PageContainer>
             <SectionReveal>
-              <div className="surface-card bg-slate-50 p-10 sm:p-14 text-center rounded-[28px]">
-                <h2 className="text-3xl font-bold tracking-tight text-slate-950">Interested in Working With Us?</h2>
-                <p className="mt-4 max-w-lg mx-auto text-base text-slate-600">
+              <div className="max-w-xl mx-auto">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0] mx-auto" />
+                <h2>Interested in Working With Us?</h2>
+                <p className="mt-6 readable-text">
                   Send your profile and let us know what you want to build.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                   <a
                     href="mailto:contact@cre8sphere.in?subject=Career%20Profile"
-                    className="inline-flex items-center justify-center gap-2 rounded-[28px] bg-teal-600 px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-teal-700"
+                    className="inline-flex items-center justify-center gap-2 rounded-[28px] bg-[#008080] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#006666] hover:text-white"
                   >
                     Send Your Profile <ArrowRight className="h-4 w-4" />
                   </a>
                   <a
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded-[28px] border border-slate-200 bg-white px-7 py-3 text-sm font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-teal-300 hover:text-teal-600"
+                    className="inline-flex items-center justify-center gap-2 rounded-[28px] border border-slate-200 bg-white px-7 py-3 text-sm font-semibold text-slate-800 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#008080] hover:border-[#008080] hover:text-white"
                   >
                     Contact Us <ArrowRight className="h-4 w-4" />
                   </a>
@@ -174,5 +191,3 @@ function CareersPage() {
 }
 
 export default CareersPage;
-
-

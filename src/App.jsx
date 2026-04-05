@@ -9,12 +9,13 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
 import DisclaimerPage from "./pages/DisclaimerPage";
 import CookiePolicyPage from "./pages/CookiePolicyPage";
+import PlatformsPage from "./pages/PlatformsPage";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieConsent from "./components/CookieConsent";
 
 function App() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-text transition-colors duration-300">
+    <div className="min-h-screen bg-white text-[#333333] transition-colors duration-300">
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/terms-and-conditions" element={<Navigate to="/terms" replace />} />
           <Route path="/disclaimer" element={<DisclaimerPage />} />
           <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          <Route path="/platforms" element={<PlatformsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <CookieConsent />

@@ -26,60 +26,63 @@ function ContactPage() {
           description="Got an idea, collaboration, or opportunity? We work with brands, creators, and innovators to build meaningful digital experiences and content."
         />
 
-        <section className="py-16 sm:py-20">
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <div className="grid gap-6 lg:grid-cols-[1fr_1.5fr]">
+              <div className="grid gap-16 lg:grid-cols-[1fr_1.5fr]">
 
-                {/* Left: Contact Info */}
-                <div className="flex flex-col gap-6">
-                  <article className="surface-card p-8">
-                    <h2 className="text-xl sm:text-[22px] font-semibold tracking-tight leading-[1.25] text-slate-950">Contact Information</h2>
-                    <ul className="mt-6 space-y-6">
+                {/* Left: Contact Info — Open Layout */}
+                <div className="flex flex-col gap-10">
+                  {/* Contact Information */}
+                  <div>
+                    <div className="mb-6 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                    <h2>Contact Information</h2>
+                    <ul className="mt-8 space-y-8">
                       <li className="flex items-start gap-4">
-                        <span className="feature-chip h-10 w-10 border border-teal-100 bg-teal-50 rounded-[28px] flex-shrink-0">
+                        <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080]">
                           <Mail className="h-4 w-4" />
                         </span>
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-teal-600">Email</p>
-                          <a href="mailto:contact@cre8sphere.in" className="mt-1 text-base text-slate-700 hover:text-teal-600 transition-colors">
+                          <p className="text-xs font-bold uppercase tracking-widest text-[#008080]">Email</p>
+                          <a href="mailto:contact@cre8sphere.in" className="mt-1 text-base text-slate-700 hover:text-[#008080] transition-colors">
                             contact@cre8sphere.in
                           </a>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
-                        <span className="feature-chip h-10 w-10 border border-teal-100 bg-teal-50 rounded-[28px] flex-shrink-0">
+                        <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080]">
                           <MapPin className="h-4 w-4" />
                         </span>
                         <div>
-                          <p className="text-xs font-bold uppercase tracking-widest text-teal-600">Location</p>
+                          <p className="text-xs font-bold uppercase tracking-widest text-[#008080]">Location</p>
                           <span className="mt-1 block text-base text-slate-700">Ahmedabad, Gujarat, India</span>
                         </div>
                       </li>
                       <li>
-                        <p className="text-xs font-bold uppercase tracking-widest text-teal-600">Business Inquiries</p>
-                        <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                        <p className="text-xs font-bold uppercase tracking-widest text-[#008080]">Business Inquiries</p>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-600">
                           For brand collaborations, partnerships, and media opportunities.
                         </p>
-                        <a href="mailto:business@cre8sphere.in" className="mt-2 inline-block text-sm font-semibold text-teal-600 hover:underline">
+                        <a href="mailto:business@cre8sphere.in" className="mt-2 inline-block text-sm font-semibold text-[#008080] hover:underline">
                           business@cre8sphere.in
                         </a>
                       </li>
                     </ul>
-                  </article>
+                  </div>
 
-                  <article className="surface-card p-8">
-                    <h2 className="text-xl sm:text-[22px] font-semibold tracking-tight leading-[1.25] text-slate-950">Follow Us</h2>
+                  {/* Follow Us */}
+                  <div>
+                    <h3 className="text-slate-950">Follow Us</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">
                       Stay connected with us across platforms.
                     </p>
-                    <div className="mt-5 flex items-center gap-4">
+                    <div className="mt-5 flex items-center gap-3">
                       <a
                         href="https://x.com/cre8spheremedia"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="X"
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-[28px] border border-slate-200 bg-white text-slate-500 hover:border-teal-300 hover:text-teal-600 transition-colors"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-[28px] border border-slate-200 bg-white text-slate-500 hover:border-[#008080]/30 hover:text-[#008080] transition-colors"
                       >
                         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
                           <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.42L6.4 22H3.3l7.24-8.27L.8 2h6.4l4.43 5.86L18.9 2Zm-1.1 18h1.73L6.22 3.9H4.36L17.8 20Z" />
@@ -90,7 +93,7 @@ function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-[28px] border border-slate-200 bg-white text-slate-500 hover:border-teal-300 hover:text-teal-600 transition-colors"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-[28px] border border-slate-200 bg-white text-slate-500 hover:border-[#008080]/30 hover:text-[#008080] transition-colors"
                       >
                         <Instagram className="h-4 w-4" />
                       </a>
@@ -99,23 +102,22 @@ function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-[28px] border border-slate-200 bg-white text-slate-500 hover:border-teal-300 hover:text-teal-600 transition-colors"
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-[28px] border border-slate-200 bg-white text-slate-500 hover:border-[#008080]/30 hover:text-[#008080] transition-colors"
                       >
                         <Linkedin className="h-4 w-4" />
                       </a>
                     </div>
-                  </article>
-
-                  <div className="surface-card p-6 bg-teal-50 border-teal-100 text-center">
-                    <p className="text-sm font-medium text-teal-800">
-                      We typically respond within <strong>24-48 hours.</strong> For urgent business inquiries, please use the business email.
-                    </p>
                   </div>
+
+                  {/* Response Time Note — inline, no card */}
+                  <p className="text-sm font-medium text-[#006666] border-l-4 border-[#008080]/20 pl-4">
+                    We typically respond within <strong>24–48 hours.</strong> For urgent inquiries, use the business email.
+                  </p>
                 </div>
 
-                {/* Right: Contact Form */}
+                {/* Right: Contact Form — KEEP as functional card */}
                 <article className="surface-card p-8">
-                  <h2 className="text-2xl font-bold tracking-tight text-slate-950">Send Us a Message</h2>
+                  <h2>Send Us a Message</h2>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">
                     Have a question, idea, or collaboration in mind? Fill out the form and our team will get back to you.
                   </p>
@@ -158,7 +160,7 @@ function ContactPage() {
                       <select
                         name="subject"
                         required
-                        className="w-full rounded-[28px] border border-gray-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none transition-colors focus:border-teal-400 focus:ring-2 focus:ring-teal-100"
+                        className="w-full rounded-[28px] border border-gray-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none transition-colors focus:border-[#008080]/40 focus:ring-2 focus:ring-[#008080]/10"
                       >
                         <option value="">Select a subject</option>
                         <option value="collaboration">Collaboration</option>
@@ -177,14 +179,14 @@ function ContactPage() {
                         className="w-full rounded-[28px] border border-gray-200 bg-white px-4 py-3 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-400 focus:border-teal-400 focus:ring-2 focus:ring-teal-100"
                       />
                     </label>
-                    <button
-                      type="submit"
-                      className="inline-flex w-full items-center justify-center rounded-[28px] bg-teal-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-teal-700"
-                    >
+                      <button
+                        type="submit"
+                        className="inline-flex w-full items-center justify-center rounded-[28px] bg-[#008080] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-[#006666] hover:text-white"
+                      >
                       Start a Conversation 🚀
                     </button>
                     <div className="rounded-[20px] border border-slate-200 bg-slate-50 px-4 py-3">
-                      <p className="text-xs font-bold uppercase tracking-widest text-teal-600">Who should reach out?</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-[#008080]">Who should reach out?</p>
                       <ul className="mt-2 space-y-1 text-sm text-slate-700">
                         <li>Brands & startups</li>
                         <li>Creators & contributors</li>
@@ -193,9 +195,9 @@ function ContactPage() {
                     </div>
                     <p className="text-xs text-slate-500 text-center">
                       By submitting, you agree to our{" "}
-                      <Link to="/privacy-policy" className="text-teal-600 hover:underline">Privacy Policy</Link>
+                      <Link to="/privacy-policy" className="text-[#008080] hover:underline">Privacy Policy</Link>
                       {" "}and{" "}
-                      <Link to="/terms" className="text-teal-600 hover:underline">Terms</Link>.
+                      <Link to="/terms" className="text-[#008080] hover:underline">Terms</Link>.
                     </p>
                   </form>
                 </article>
@@ -211,5 +213,3 @@ function ContactPage() {
 }
 
 export default ContactPage;
-
-

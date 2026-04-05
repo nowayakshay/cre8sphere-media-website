@@ -20,53 +20,68 @@ const platforms = [
 ];
 
 function SharedPlatformsSection({
-  title = "Our Platforms",
-  subtitle = null
+  title = "Our Media Platforms",
+  subtitle = "Powering the Cre8sphere ecosystem across consumer technology and AI innovation."
 }) {
   return (
-    <section className="pb-16 sm:pb-20" id="platforms">
+    <section className="relative py-24 sm:py-32 overflow-hidden" id="platforms">
+      {/* Subtle Background Visual */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,128,128,0.04),transparent_70%)] blur-3xl opacity-60" />
+      </div>
+
       <PageContainer>
         <SectionReveal>
-          <div className="saas-shell section-layer p-8">
-            <h2 className="section-title selection:bg-transparent selection:text-current text-slate-950">
+          <div className="mb-16 text-center lg:text-left">
+            <h2>
               {title}
             </h2>
-            {subtitle ? (
-              <p className="selection:bg-transparent selection:text-current mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+            {subtitle && (
+              <p className="mt-4 readable-text">
                 {subtitle}
               </p>
-            ) : null}
-            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-              {platforms.map((platform) => (
-                <a
-                  key={platform.title}
-                  href={platform.website}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group gradient-card elevate-card block h-full border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_32px_rgba(15,23,42,0.1)]"
-                >
-                  <div className="mb-4 h-1 w-14 rounded-[28px] bg-gradient-to-r from-teal-600 to-teal-400" />
-                  <div className="mb-3 flex items-center gap-3">
-                    <div className="flex h-10 w-24 flex-shrink-0 items-center justify-center rounded-[28px] border border-slate-200 bg-white px-2">
-                      <img
-                        src={platform.logo}
-                        alt={`${platform.title} logo`}
-                        className="h-6 w-auto max-w-[80px] object-contain"
-                        loading="lazy"
-                      />
-                    </div>
-                    <h3 className="text-xl font-semibold leading-tight text-slate-950">{platform.title}</h3>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:gap-24">
+            {platforms.map((platform) => (
+              <a
+                key={platform.title}
+                href={platform.website}
+                target="_blank"
+                rel="noreferrer"
+                className="group relative flex h-full flex-col text-left transition-all duration-300"
+              >
+                {/* Logo & Header Section */}
+                <div className="mb-8 flex flex-col items-start gap-6">
+                  <div className="flex h-16 w-48 items-center justify-center rounded-2xl border border-slate-100 bg-white/50 px-6 p-4 shadow-sm transition-all duration-500 group-hover:bg-white group-hover:shadow-md group-hover:border-[#008080]/30">
+                    <img
+                      src={platform.logo}
+                      alt={`${platform.title} logo`}
+                      className="h-8 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
-                  <p className="mt-2 text-sm leading-7 text-slate-600 sm:text-base">
-                    {platform.description}
-                  </p>
-                  <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-accent">
-                    <span>Visit Platform</span>
-                    <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-[#008080] transition-colors">
+                      {platform.title}
+                    </h3>
+                    <div className="h-1 w-8 rounded-full bg-[#008080]/20 transition-all duration-500 group-hover:w-16 group-hover:bg-[#008080]" />
                   </div>
-                </a>
-              ))}
-            </div>
+                </div>
+
+                <p className="text-[17px] leading-relaxed text-slate-600 flex-grow">
+                  {platform.description}
+                </p>
+
+                <div className="mt-10 flex items-center gap-3 text-base font-bold uppercase tracking-widest text-[#008080] transition-all duration-300 group-hover:gap-5 group-hover:text-[#006666]">
+                  <span>Visit Platform</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F2F9F9] group-hover:bg-[#008080] group-hover:text-white transition-all duration-300">
+                    <ArrowRight className="h-5 w-5" />
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
         </SectionReveal>
       </PageContainer>

@@ -5,17 +5,25 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["'Plus Jakarta Sans'", "sans-serif"],
-        body: ["Poppins", "sans-serif"]
+        heading: ["'Sora'", "sans-serif"],
+        body: ["'Inter'", "sans-serif"]
       },
       colors: {
         brand: {
-          text: "#0f172a",
-          accent: "#008080",
-          hover: "#0a6d6d",
-          bg: "#f8fafb",
-          soft: "#ffffff",
-          border: "#e5e7eb"
+          // Core
+          accent:   "#008080",
+          hover:    "#006666",
+          light:    "#F2F9F9",
+          soft:     "rgba(0,128,128,0.10)",
+          // Text hierarchy
+          text:     "#000000",
+          body:     "#333333",
+          muted:    "#6B7280",
+          // Backgrounds
+          bg:       "#FFFFFF",
+          alt:      "#F9FAFB",
+          // Border
+          border:   "#E5E7EB"
         }
       }
     }

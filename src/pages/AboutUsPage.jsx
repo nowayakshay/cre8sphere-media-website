@@ -1,4 +1,4 @@
-﻿import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "../components/SectionReveal";
@@ -45,42 +45,40 @@ function AboutUsPage() {
           description="Cre8sphere Media is a digital media company building platforms around technology, artificial intelligence, electric mobility, and digital innovation. We focus on simplifying complex ideas and turning them into meaningful, accessible content for the modern audience."
         />
 
-        <section className="py-16 sm:py-20">
+        {/* Our Mission */}
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <article className="gradient-card elevate-card p-8">
-                <div className="mb-5 h-1 w-16 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
-                <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Our Mission
-                </h2>
-                <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
+              <div className="max-w-3xl">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>Our Mission</h2>
+                <p className="mt-6 readable-text">
                   Our mission is to inform, inspire, and innovate by exploring
                   emerging technologies and delivering insights that matter. We
                   aim to bridge the gap between rapid technological advancements
                   and everyday understanding through clear, engaging, and
                   practical digital content.
                 </p>
-              </article>
+              </div>
             </SectionReveal>
           </PageContainer>
         </section>
 
-        <section className="pb-16 sm:pb-20">
+        {/* Our Vision */}
+        <section className="py-20 sm:py-24 bg-slate-50/60">
           <PageContainer>
             <SectionReveal>
-              <article className="saas-shell section-layer p-8">
-                <div className="mb-5 h-1 w-16 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
-                <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Our Vision
-                </h2>
-                <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
+              <div className="max-w-3xl">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>Our Vision</h2>
+                <p className="mt-6 readable-text">
                   We envision Cre8sphere Media as a growing ecosystem of digital
                   platforms and creative initiatives shaping the future of media
                   and technology. By combining media, creativity, and innovation,
                   we aim to build impactful digital experiences that evolve with
                   the next generation of users.
                 </p>
-              </article>
+              </div>
             </SectionReveal>
           </PageContainer>
         </section>
@@ -89,54 +87,51 @@ function AboutUsPage() {
           subtitle="Cre8sphere Media operates a growing network of digital platforms, each focused on a specific domain."
         />
 
-        <section className="pb-16 sm:pb-20">
+        {/* Innovation at Cre8sphere */}
+        <section className="py-20 sm:py-24">
           <PageContainer>
             <SectionReveal>
-              <article className="saas-shell section-layer p-8">
-                <div className="mb-5 h-1 w-16 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
-                <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Innovation at Cre8sphere Media
-                </h2>
-                <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
-                  At Cre8sphere Media, we are not just building content platforms
-                  - we are also exploring the intersection of media and
-                  technology.
-                </p>
-                <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
-                  We are developing AI-powered tools designed to empower creators
-                  and digital communities.
-                </p>
-                <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
-                  One such initiative is Repurplex, an AI-based content
-                  transformation engine that converts long-form content into
-                  multiple platform-ready formats instantly. Our goal is to
-                  create a dynamic ecosystem where media, technology, and AI work
-                  together to enhance digital creativity.
-                </p>
-              </article>
+              <div className="max-w-3xl">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>Innovation at Cre8sphere Media</h2>
+                <div className="mt-6 readable-text space-y-4">
+                  <p>
+                    At Cre8sphere Media, we are not just building content platforms
+                    — we are also exploring the intersection of media and technology.
+                  </p>
+                  <p>
+                    We are developing AI-powered tools designed to empower creators
+                    and digital communities.
+                  </p>
+                  <p>
+                    One such initiative is Repurplex, an AI-based content
+                    transformation engine that converts long-form content into
+                    multiple platform-ready formats instantly. Our goal is to
+                    create a dynamic ecosystem where media, technology, and AI work
+                    together to enhance digital creativity.
+                  </p>
+                </div>
+              </div>
             </SectionReveal>
           </PageContainer>
         </section>
 
-        <section className="py-16 sm:py-20">
+        {/* Our Values */}
+        <section className="py-20 sm:py-24 bg-slate-50/60">
           <PageContainer>
             <SectionReveal>
-              <div className="saas-shell section-layer p-8">
-                <div className="mb-5 h-1 w-16 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
-                <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Our Values
-                </h2>
-                <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                  {values.map((value, index) => (
-                    <article
-                      key={value.title}
-                      className={`${index === 0 || index === 3 ? "feature-tile" : "gradient-card"} elevate-card border border-slate-200 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-md`}
-                    >
-                      <h3 className="text-lg font-semibold text-brand-accent">{value.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-600">{value.description}</p>
-                    </article>
-                  ))}
-                </div>
+              <div className="mb-12">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0]" />
+                <h2>Our Values</h2>
+              </div>
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                {values.map((value) => (
+                  <div key={value.title} className="flex flex-col gap-3">
+                    <span className="inline-block h-2 w-2 rounded-full bg-[#008080]" />
+                    <h3 className="text-brand-accent">{value.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">{value.description}</p>
+                  </div>
+                ))}
               </div>
             </SectionReveal>
           </PageContainer>
@@ -144,25 +139,24 @@ function AboutUsPage() {
 
         <OurTeamSection />
 
-        <section className="pb-16 sm:pb-20">
+        {/* CTA */}
+        <section className="py-20 sm:py-24 text-center">
           <PageContainer>
             <SectionReveal>
-              <article className="surface-card elevate-card rounded-[28px] p-8">
-                <div className="mb-5 h-1 w-16 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
-                <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-                  Let&apos;s Build Together
-                </h2>
-                <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+              <div className="max-w-2xl mx-auto">
+                <div className="mb-5 h-1 w-12 rounded-full bg-gradient-to-r from-[#008080] to-[#00a0a0] mx-auto" />
+                <h2>Let&apos;s Build Together</h2>
+                <p className="mt-6 readable-text">
                   We collaborate with brands, creators, and innovators to create meaningful digital experiences.
                 </p>
                 <Link
                   to="/contact"
-                  className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-accent px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-hover"
+                  className="group mt-8 inline-flex items-center gap-2 rounded-[28px] bg-brand-accent px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-hover hover:text-white"
                 >
                   Get in Touch
                   <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </Link>
-              </article>
+              </div>
             </SectionReveal>
           </PageContainer>
         </section>
@@ -173,6 +167,3 @@ function AboutUsPage() {
 }
 
 export default AboutUsPage;
-
-
-

@@ -112,14 +112,14 @@ function CookieConsent() {
               <button
                 type="button"
                 onClick={acceptAll}
-                className="inline-flex h-10 items-center justify-center rounded-xl bg-[#008080] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#0a6d6d]"
+                className="inline-flex h-10 items-center justify-center rounded-xl bg-[#008080] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#006666]"
               >
                 Accept All
               </button>
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
-                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-300 hover:text-teal-700"
+                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition-colors hover:border-[#008080]/30 hover:text-[#008080]"
               >
                 Manage Preferences
               </button>
@@ -166,7 +166,7 @@ function CookieConsent() {
                   onChange={(e) =>
                     setPreferences((prev) => ({ ...prev, analytics: e.target.checked }))
                   }
-                  className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-[#008080] focus:ring-[#008080]"
                 />
               </label>
 
@@ -183,7 +183,7 @@ function CookieConsent() {
                   onChange={(e) =>
                     setPreferences((prev) => ({ ...prev, marketing: e.target.checked }))
                   }
-                  className="mt-1 h-4 w-4 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-[#008080] focus:ring-[#008080]"
                 />
               </label>
             </div>
@@ -192,14 +192,14 @@ function CookieConsent() {
               <button
                 type="button"
                 onClick={savePreferences}
-                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition-colors hover:border-teal-300 hover:text-teal-700"
+                className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition-colors hover:border-[#008080]/30 hover:text-[#008080]"
               >
                 Save Preferences
               </button>
               <button
                 type="button"
                 onClick={acceptAll}
-                className="inline-flex h-10 items-center justify-center rounded-xl bg-[#008080] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#0a6d6d]"
+                className="inline-flex h-10 items-center justify-center rounded-xl bg-[#008080] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#006666]"
               >
                 Accept All
               </button>

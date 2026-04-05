@@ -1,4 +1,4 @@
-﻿import { ArrowUpRight, Newspaper, PenTool, Smartphone } from "lucide-react";
+import { ArrowUpRight, Newspaper, PenTool, Smartphone } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 import SectionReveal from "./SectionReveal";
 
@@ -22,7 +22,7 @@ const platforms = [
     website: "https://origin8agency.in/",
     description: "Creative studio for branding and digital storytelling",
     icon: PenTool,
-    iconClass: "bg-teal-50 text-teal-600 border-teal-100"
+    iconClass: "bg-[#F2F9F9] text-[#008080] border-[#008080]/10"
   }
 ];
 
