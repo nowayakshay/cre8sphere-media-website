@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" fill="none">
+  <rect width="480" height="480" fill="#000000"/>
+  <path d="M160 90L240 136V342L160 388L80 342V136L160 90Z" fill="#173F6D"/>
+  <path d="M240 136L320 90L400 136V342L320 388L240 342V136Z" fill="#FF0066"/>
+  <path d="M132 146H196V236L240 260L196 286V342L132 304V146Z" fill="#000000"/>
+  <path d="M284 146H348V304L284 342V236L328 212L284 186V146Z" fill="#000000"/>
+  <path d="M196 236L240 260L284 236V186L240 212L196 186V236Z" fill="#000000"/>
+</svg>
