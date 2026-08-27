@@ -90,7 +90,7 @@ export default function Footer() {
               © 2026 <span className="font-semibold text-slate-700">Cre8sphere LLP</span>. All rights reserved.
             </p>
             <p className="text-[11px] text-slate-400 italic">
-              Cre8sphere LLP — formerly known as Cre8sphere Digital Media LLP.
+              Cre8sphere LLP formally known as Cre8sphere Digital Media LLP
             </p>
           </div>
           <p className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 sm:mt-0">

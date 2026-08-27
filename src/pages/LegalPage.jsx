@@ -13,7 +13,7 @@ export default function LegalPage({ type = "privacy" }) {
         "Cre8sphere LLP ('Cre8sphere', 'we', 'our', or 'us') respects your privacy and is committed to protecting your personal data.",
         "This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website https://cre8sphere.in or use our digital services.",
         "We collect personal information that you voluntarily provide when submitting inquiry forms, registering for applications, or contacting our support team.",
-        "Legal Disclosure: Cre8sphere LLP — formerly known as Cre8sphere Digital Media LLP — operates in compliance with applicable Indian data protection laws and international standards."
+        "Legal Disclosure: Cre8sphere LLP formally known as Cre8sphere Digital Media LLP operates in compliance with applicable Indian data protection laws and international standards."
       ]
     },
     terms: {
@@ -23,7 +23,7 @@ export default function LegalPage({ type = "privacy" }) {
         "Welcome to Cre8sphere LLP. By accessing or using our website and software applications, you agree to comply with and be bound by these Terms and Conditions.",
         "All intellectual property, trademarks, logos, content, and software code on this website remain the exclusive property of Cre8sphere LLP.",
         "You agree not to modify, reverse engineer, reproduce, or distribute any material without prior written permission from Cre8sphere LLP.",
-        "Cre8sphere LLP — formerly known as Cre8sphere Digital Media LLP — reserves the right to update these terms at any time."
+        "Cre8sphere LLP formally known as Cre8sphere Digital Media LLP reserves the right to update these terms at any time."
       ]
     },
     disclaimer: {
@@ -76,7 +76,7 @@ export default function LegalPage({ type = "privacy" }) {
             ))}
 
             <div className="pt-6 border-t border-slate-100 text-xs text-slate-400">
-              Cre8sphere LLP — formerly known as Cre8sphere Digital Media LLP. Registered Entity in India.
+              Cre8sphere LLP formally known as Cre8sphere Digital Media LLP. Registered Entity in India.
             </div>
           </div>
         </PageContainer>

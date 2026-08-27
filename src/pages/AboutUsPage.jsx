@@ -43,7 +43,7 @@ export default function AboutUsPage() {
                 Today, our engineering and product teams build software tools like <strong>Repurplex</strong> (AI Content Repurposer), <strong>Refyn</strong>, and <strong>Newstrix</strong> while operating digital media platforms including <strong>GizmoGeek Hub</strong> and <strong>TechOrbis</strong>.
               </p>
               <div className="rounded-2xl border-l-4 border-[#008080] bg-slate-50 p-5 text-slate-800 font-semibold italic text-sm">
-                &ldquo;Cre8sphere LLP — formerly known as Cre8sphere Digital Media LLP — represents our expanded commitment to software product engineering and AI innovation.&rdquo;
+                &ldquo;Cre8sphere LLP formally known as Cre8sphere Digital Media LLP represents our expanded commitment to software product engineering and AI innovation.&rdquo;
               </div>
             </div>
 
