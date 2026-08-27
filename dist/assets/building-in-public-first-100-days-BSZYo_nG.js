@@ -2,12 +2,12 @@ const e=`---
 id: 7
 title: "Building Cre8sphere in Public: 100 Days of Growth & Lessons"
 category: "Company Updates"
-description: "A transparent deep dive into the first 100 days of building Cre8sphere. Learn about our pivots, milestones, and the reality of solo-building an ecosystem."
+description: "A transparent deep dive into the first 100 days of building Cre8sphere Media. Learn about our pivots, milestones, and the reality of solo-building an ecosystem."
 date: "March 20, 2026"
 featured: false
 ---
 
-The first 100 days of building **Cre8sphere** were not about scale. They were about **clarity.** 
+The first 100 days of building **Cre8sphere Media** were not about scale. They were about **clarity.** 
 
 What started as an idea to simplify technology slowly turned into something more structured. A platform. Then multiple platforms. Then an ecosystem. But none of it felt linear.
 

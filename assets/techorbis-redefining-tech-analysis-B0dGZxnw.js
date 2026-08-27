@@ -9,7 +9,7 @@ featured: false
 
 TechOrbis was not created to report technology. It was created to understand it better. 
 
-As Cre8sphere started growing, one thing became clear: there was a significant gap between how emerging technologies were being discussed and how they were actually evolving. Most platforms were either focused on dangerously fast news cycles or were far too technical for everyday understanding. TechOrbis began specifically to fill that gap with clear, structured analysis.
+As Cre8sphere Media started growing, one thing became clear: there was a significant gap between how emerging technologies were being discussed and how they were actually evolving. Most platforms were either focused on dangerously fast news cycles or were far too technical for everyday understanding. TechOrbis began specifically to fill that gap with clear, structured analysis.
 
 ## Why TechOrbis Was Started
 

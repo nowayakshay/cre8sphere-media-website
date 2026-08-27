@@ -1,17 +1,17 @@
 const e=`---
 id: 9
-title: "Press Release: Cre8sphere LLP Launches Cre8sphere AI to Build Practical AI Products"
+title: "Press Release: Cre8sphere Digital Media LLP Launches Cre8sphere AI to Build Practical AI Products"
 category: "Press Release"
-description: "Cre8sphere LLP today announced the launch of Cre8sphere AI, the company's dedicated artificial intelligence division focused on building practical AI-powered products."
+description: "Cre8sphere Digital Media LLP today announced the launch of Cre8sphere AI, the company's dedicated artificial intelligence division focused on building practical AI-powered products."
 date: "May 15, 2026"
 featured: true
 ---
 
 # FOR IMMEDIATE RELEASE
 
-## Cre8sphere LLP Launches Cre8sphere AI to Build Practical AI Products for Creators and Businesses
+## Cre8sphere Digital Media LLP Launches Cre8sphere AI to Build Practical AI Products for Creators and Businesses
 
-**Ahmedabad, Gujarat, May 2026:** Cre8sphere LLP today announced the launch of Cre8sphere AI, the company's dedicated artificial intelligence division focused on building practical AI-powered products that help creators, professionals, and businesses work smarter.
+**Ahmedabad, Gujarat, May 2026:** Cre8sphere Digital Media LLP today announced the launch of Cre8sphere AI, the company's dedicated artificial intelligence division focused on building practical AI-powered products that help creators, professionals, and businesses work smarter.
 
 The launch marks a significant milestone in Cre8sphere's vision of creating an ecosystem where media, creativity, artificial intelligence, and product innovation come together to solve real-world problems through technology.
 
@@ -46,18 +46,18 @@ Together, these products will form a growing ecosystem that supports creators, p
 
 ### About Cre8sphere AI
 
-Cre8sphere AI is the artificial intelligence division of Cre8sphere LLP. The division develops practical AI-powered software that helps people create better content, automate repetitive work, improve productivity, and make more informed decisions through thoughtful technology.
+Cre8sphere AI is the artificial intelligence division of Cre8sphere Digital Media LLP. The division develops practical AI-powered software that helps people create better content, automate repetitive work, improve productivity, and make more informed decisions through thoughtful technology.
 
-### About Cre8sphere LLP
+### About Cre8sphere Digital Media LLP
 
-Cre8sphere LLP is a technology and digital media company focused on publishing, artificial intelligence, creative services, and product innovation. Through its ecosystem of brands, including GizmoGeek Hub, TechOrbis, Origin8, Cre8sphere AI, and MoonSphere, the company builds products and experiences that empower people through technology.
+Cre8sphere Digital Media LLP is a technology and digital media company focused on publishing, artificial intelligence, creative services, and product innovation. Through its ecosystem of brands, including GizmoGeek Hub, TechOrbis, Origin8, Cre8sphere AI, and MoonSphere, the company builds products and experiences that empower people through technology.
 
 ---
 
 **Media Contact**  
 Akshay Nair  
 Founder  
-Cre8sphere LLP  
+Cre8sphere Digital Media LLP  
 Email: press@cre8sphere.in  
 Website: [www.cre8sphere.in](http://www.cre8sphere.in)
 `;export{e as default};

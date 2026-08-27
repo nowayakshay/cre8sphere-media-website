@@ -1,212 +1,135 @@
-import { ArrowRight, Bot, Newspaper, Palette, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ArrowRight, Sparkles, Cpu, ShoppingBag, Zap } from "lucide-react";
 import PageContainer from "../layouts/PageContainer";
 
-const productStack = [
-  {
-    title: "GizmoGeek Hub",
-    description: "Consumer tech platform",
-    icon: Smartphone,
-    colorClass: "bg-cyan-50 text-cyan-600",
-  },
-  {
-    title: "TechOrbis",
-    description: "AI, EV, future tech",
-    icon: Newspaper,
-    colorClass: "bg-emerald-50 text-emerald-600",
-  },
-  {
-    title: "Origin8",
-    description: "Branding, storytelling, and digital design",
-    icon: Palette,
-    colorClass: "bg-violet-50 text-violet-600",
-  },
-  {
-    title: "AI Studio",
-    description: "Repurplex, Refyn AI, Newstrix",
-    icon: Bot,
-    colorClass: "bg-[#F2F9F9] text-[#008080]",
-  },
+const categories = [
+  { label: "AI & Automation", icon: Cpu },
+  { label: "Consumer Products", icon: ShoppingBag },
+  { label: "Media & Publishing", icon: Zap },
 ];
 
-function HeroSection() {
-  const headingWords = ["Cre8sphere", "Media"];
+const stats = [
+  { value: "7+", label: "Software Products" },
+  { value: "4", label: "Active Divisions" },
+  { value: "2", label: "Live AI Platforms" },
+  { value: "2024", label: "Founded" },
+];
 
+export default function HeroSection() {
   return (
-    <section className="pt-10 sm:pt-20 pb-16 lg:pb-24 overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#f8fafc] to-white py-20 lg:py-28" id="hero">
+      {/* Glow & Dot Background */}
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+        <div className="absolute -top-[10%] left-1/2 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,128,128,0.16)_0%,rgba(0,179,179,0.05)_50%,transparent_70%)] blur-[80px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(148,163,184,0.12)_1px,transparent_1px)] [background-size:40px_40px] opacity-75" />
+      </div>
+
       <PageContainer>
-        <div className="saas-shell hero-showcase border border-slate-200 bg-white p-6 sm:p-8 lg:p-10">
-          {/* Background orbs */}
-          <div className="pointer-events-none absolute inset-0">
-            <div className="hero-orb hero-orb-a absolute -left-12 top-10 h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(0,128,128,0.14),transparent_72%)] blur-2xl" />
-            <div className="hero-orb hero-orb-b absolute right-0 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(14,165,164,0.1),transparent_74%)] blur-3xl" />
-            <div className="absolute bottom-4 left-1/2 h-20 w-20 -translate-x-1/2 rounded-full border border-[#008080]/10" />
-            <div className="hero-ribbon hero-ribbon-a" />
-            <div className="hero-ribbon hero-ribbon-b" />
-          </div>
+        <div className="relative z-10 mx-auto flex max-w-[860px] flex-col items-center text-center">
+          {/* Top Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="mb-6"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#008080]/20 bg-white/95 px-5 py-2 text-xs sm:text-sm font-bold text-[#008080] tracking-wide shadow-[0_4px_20px_rgba(0,128,128,0.08)] backdrop-blur-md">
+              <Sparkles className="h-4 w-4 text-[#008080]" />
+              Technology & Innovation Company
+            </span>
+          </motion.div>
 
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            {/* ── Left: Text ── */}
-            <div className="text-left flex flex-col items-start">
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+            className="mb-6 font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#0f172a] leading-[1.05]"
+          >
+            Building Technology <br />
+            <span className="bg-gradient-to-r from-[#008080] via-[#00b3b3] to-[#006666] bg-clip-text text-transparent inline">
+              That Shapes Tomorrow.
+            </span>
+          </motion.h1>
 
-              {/* Tagline — enhanced gradient + weight */}
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, ease: "easeOut" }}
-                className="inline-block text-[11px] font-extrabold uppercase tracking-[0.28em] bg-gradient-to-r from-[#006666] via-[#008080] to-[#00b3b3] bg-clip-text text-transparent"
-              >
-                Exploring Tomorrow&apos;s Technology Today
-              </motion.span>
+          {/* Paragraph */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            className="mb-9 max-w-[640px] text-base sm:text-lg lg:text-xl font-normal leading-relaxed text-[#475569]"
+          >
+            Cre8sphere is a technology and innovation company creating AI products, software platforms, consumer applications, digital media, and creative experiences that help people and businesses achieve more.
+          </motion.p>
 
-              {/* H1 */}
-              <h1 className="mt-4">
-                {headingWords.map((word, index) => (
-                  <motion.span
-                    key={word}
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.12 + index * 0.1 }}
-                    className={index === 1 ? "gradient-text italic block sm:inline pr-2" : ""}
-                  >
-                    {word}{" "}
-                  </motion.span>
-                ))}
-              </h1>
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+            className="mb-9 flex flex-wrap items-center justify-center gap-4"
+          >
+            <Link
+              to="/products"
+              className="group inline-flex h-[52px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#008080] to-[#00b3b3] px-8 text-base font-bold text-white shadow-[0_4px_18px_rgba(0,128,128,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,179,179,0.45)]"
+            >
+              Explore Our Ecosystem
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+            <Link
+              to="/products"
+              className="group inline-flex h-[52px] items-center justify-center gap-2.5 rounded-full border border-[#e2e8f0] bg-white px-8 text-base font-semibold text-[#0f172a] shadow-[0_2px_8px_rgba(0,0,0,0.03)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#cbd5e1] hover:bg-[#f8fafc]"
+            >
+              View Products
+              <ArrowRight className="h-4 w-4 text-slate-400 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-slate-700" />
+            </Link>
+          </motion.div>
 
-              {/* Hook line */}
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.28 }}
-                className="mt-3 text-[17px] sm:text-[18px] font-medium leading-snug text-[#333333] max-w-[480px]"
-                style={{ fontFamily: '"Sora", sans-serif' }}
-              >
-                Building the future of digital media and AI platforms.
-              </motion.p>
-
-              {/* Body copy */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.38 }}
-                className="mt-5 readable-text space-y-4"
-              >
-                <p>
-                  Cre8sphere Media is a digital media and AI product company
-                  focused on technology, artificial intelligence, electric
-                  mobility, and digital innovation.
-                </p>
-                <p>
-                  We build and operate a growing ecosystem of platforms, AI
-                  tools, and creative solutions through our media, AI, and
-                  creative divisions.
-                </p>
-              </motion.div>
-
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.48 }}
-                className="mt-8 flex flex-col items-center gap-4 sm:flex-row w-full sm:w-auto"
-              >
-                <Link
-                  to="/platforms"
-                  className="btn-premium btn-primary-glow whitespace-nowrap inline-flex h-12 items-center justify-center gap-2 rounded-[28px] bg-[#008080] px-5 sm:px-8 font-semibold text-white hover:bg-[#006666] hover:text-white"
+          {/* Sub-Category Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.35 }}
+            className="mb-12 flex flex-wrap items-center justify-center gap-3.5"
+          >
+            {categories.map((cat) => {
+              const Icon = cat.icon;
+              return (
+                <div
+                  key={cat.label}
+                  className="inline-flex items-center gap-2 rounded-full border border-[#e2e8f0] bg-white px-4 py-2 text-xs sm:text-sm font-semibold text-[#334155] shadow-[0_2px_8px_rgba(15,23,42,0.03)]"
                 >
-                  Explore Our Platforms
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  to="/about"
-                  className="btn-premium whitespace-nowrap inline-flex h-12 items-center justify-center gap-2 rounded-[28px] border border-[#008080] bg-white px-5 sm:px-8 font-semibold text-[#008080] hover:bg-[#008080] hover:border-[#008080] hover:text-white"
-                >
-                  Learn More About Us
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </motion.div>
+                  <Icon className="h-3.5 w-3.5 text-[#008080]" />
+                  <span>{cat.label}</span>
+                </div>
+              );
+            })}
+          </motion.div>
 
-              {/* Stats ticker */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 0.56 }}
-                className="mt-10 inline-block text-sm font-bold tracking-wide text-slate-700"
-              >
-                3+ Platforms • 6+ Coverage Areas
-              </motion.div>
-            </div>
-
-            {/* ── Right: Ecosystem card ── */}
-            <div className="relative mt-10 w-full max-w-[500px] mx-auto lg:mx-0 lg:ml-auto lg:mt-0">
-
-              {/* Soft teal glow behind card */}
+          {/* Stats Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+            className="grid w-full max-w-[820px] grid-cols-2 gap-3.5 sm:grid-cols-4"
+          >
+            {stats.map((stat) => (
               <div
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[72px]"
-                style={{ background: "radial-gradient(circle, rgba(0,128,128,0.18) 0%, transparent 70%)" }}
-              />
-
-              {/* Corner accent */}
-              <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-2xl border border-[#008080]/10 bg-[#F2F9F9]/70" />
-
-              {/* Glassmorphism card */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                className="relative z-10 rounded-[28px] p-6 sm:p-7"
-                style={{
-                  background: "rgba(255, 255, 255, 0.72)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                  border: "1px solid rgba(0, 128, 128, 0.12)",
-                  boxShadow: "0 8px 32px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(0,128,128,0.06)",
-                }}
+                key={stat.label}
+                className="flex flex-col items-center justify-center rounded-2xl border border-[#e2e8f0] bg-white p-4 shadow-[0_2px_10px_rgba(15,23,42,0.03)] text-center"
               >
-                {/* Status badge */}
-                <div className="rounded-[20px] border border-[#008080]/10 bg-gradient-to-b from-[#F2F9F9]/75 to-white p-4 text-center">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[#008080]/10 bg-white px-3 py-1 text-[13px] font-medium text-slate-700">
-                    <span className="inline-block h-2 w-2 rounded-full bg-[#008080] animate-pulse" />
-                    Building core ecosystem...
-                  </div>
-                </div>
-
-                {/* Product rows */}
-                <div className="mt-5 space-y-3">
-                  {productStack.map((product, i) => (
-                    <motion.div
-                      key={product.title}
-                      initial={{ opacity: 0, x: 8 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.35, ease: "easeOut", delay: 0.35 + i * 0.07 }}
-                      className="flex items-center gap-4 rounded-[16px] border border-slate-200/80 bg-white px-4 py-3 shadow-[0_2px_8px_rgba(15,23,42,0.04)]"
-                    >
-                      <div className={`inline-flex items-center justify-center h-11 w-11 flex-shrink-0 rounded-[12px] ${product.colorClass}`}>
-                        <product.icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3>{product.title}</h3>
-                        <p className="subtext mt-0.5">{product.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </div>
+                <span className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0f172a] leading-none mb-1">
+                  {stat.value}
+                </span>
+                <span className="text-xs font-semibold text-[#64748b] leading-tight">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </PageContainer>
-
-      {/* Banner Below Hero */}
-      <div className="mt-16 sm:mt-24 border-t border-slate-100 bg-slate-50/50 py-10 text-center px-4">
-        <p className="text-sm font-semibold uppercase tracking-[0.08em] text-slate-500 leading-relaxed max-w-3xl mx-auto italic">
-          A MULTI-PLATFORM MEDIA AND AI ECOSYSTEM BUILT FOR THE FUTURE OF TECHNOLOGY.
-        </p>
-      </div>
     </section>
   );
 }
-
-export default HeroSection;

@@ -2,12 +2,12 @@ const e=`---
 id: 1
 title: "Inside the Cre8sphere Vision: Building a Builders' Ecosystem"
 category: "Company Updates"
-description: "Understand the core vision behind Cre8sphere. We are moving beyond traditional reporting to build an integrated platform for creators and developers."
+description: "Understand the core vision behind Cre8sphere Media. We are moving beyond traditional reporting to build an integrated platform for creators and developers."
 date: "April 05, 2026"
 featured: true
 ---
 
-Cre8sphere did not start as just a media platform. It started as a way to understand technology better and make it accessible. Over time, that idea evolved—a journey we’ve shared openly through our [Building in Public](/insights/building-in-public-first-100-days) updates. Today, the vision is not just to explain technology, but to **build around it.**
+Cre8sphere Media did not start as just a media platform. It started as a way to understand technology better and make it accessible. Over time, that idea evolved—a journey we’ve shared openly through our [Building in Public](/insights/building-in-public-first-100-days) updates. Today, the vision is not just to explain technology, but to **build around it.**
 
 ## Moving Beyond Traditional Media
 
