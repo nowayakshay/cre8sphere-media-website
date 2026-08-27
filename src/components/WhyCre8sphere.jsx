@@ -5,28 +5,28 @@ import SectionReveal from "./SectionReveal";
 
 const pillars = [
   {
-    title: "Future-Focused Perspective",
-    description: "We analyze emerging trends and technologies to help audiences stay ahead in a rapidly evolving digital world.",
+    title: "Future-Focused Vision",
+    description: "We build and invest in technology platforms, AI tools, and digital media systems designed for long-term impact.",
     icon: Rocket,
-    iconClass: "bg-cyan-50 text-cyan-600 border-cyan-100"
+    iconClass: "bg-teal-50 text-[#008080] border-teal-100"
   },
   {
-    title: "Simplifying Complex Technology",
-    description: "We break down complex technologies into clear, easy-to-understand insights for everyday users.",
+    title: "Product & AI Engineering",
+    description: "Our AI studio creates workflow automation tools like Repurplex, Refyn, and Newstrix for digital teams and creators.",
     icon: Lightbulb,
-    iconClass: "bg-amber-50 text-amber-600 border-amber-100"
+    iconClass: "bg-teal-50 text-[#008080] border-teal-100"
   },
   {
-    title: "Platform-Driven Media",
-    description: "Our platforms are built to deliver focused, high-quality content tailored to specific technology domains.",
+    title: "Domain Authority Media",
+    description: "Through GizmoGeek Hub and TechOrbis, we operate focused digital media brands delivering high-quality tech coverage.",
     icon: Workflow,
-    iconClass: "bg-violet-50 text-violet-600 border-violet-100"
+    iconClass: "bg-teal-50 text-[#008080] border-teal-100"
   },
   {
-    title: "Innovation Through Media",
-    description: "We explore new ways of combining media, technology, and creativity to build impactful digital experiences.",
+    title: "Creative & Brand Systems",
+    description: "Origin8 powers digital design, brand strategy, and creative storytelling across our corporate ecosystem.",
     icon: WandSparkles,
-    iconClass: "bg-emerald-50 text-emerald-600 border-emerald-100"
+    iconClass: "bg-teal-50 text-[#008080] border-teal-100"
   }
 ];
 
@@ -54,41 +54,38 @@ const itemVariants = {
 
 function WhyCre8sphere() {
   return (
-    <section className="relative py-10 sm:py-20 overflow-hidden bg-white" id="why-cre8sphere">
+    <section className="relative py-16 sm:py-24 overflow-hidden bg-white" id="why-cre8sphere">
       <PageContainer>
         <SectionReveal>
-          <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             
-            {/* Left Column: Narrative Storytelling */}
+            {/* Left Column */}
             <article className="relative z-10 text-left flex flex-col items-start">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080] mb-8">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F2F9F9] text-[#008080] mb-6">
                 <Compass className="h-6 w-6" />
               </div>
               
-              <h2 className="tracking-tight leading-[1.1]">
-                Why Cre8sphere Media
+              <h2 className="font-heading text-3xl font-extrabold text-slate-900 sm:text-4xl lg:text-5xl leading-tight">
+                Why Cre8sphere
               </h2>
               
-              <div className="mt-8 space-y-6 readable-text">
-                <p>
-                  Cre8sphere Media is building a structured ecosystem that combines media,
-                  products, and creative systems under one future-facing company vision.
+              <div className="mt-6 space-y-5 readable-text text-slate-600">
+                <p className="text-base sm:text-lg leading-relaxed">
+                  Cre8sphere LLP is building a connected ecosystem at the intersection of artificial intelligence, digital media platforms, software tools, and creative systems.
                 </p>
-                <p>
-                  Our goal is to make technology clearer, more useful, and more accessible
-                  while building tools and platforms that scale with the next generation of digital media.
+                <p className="text-base sm:text-lg leading-relaxed">
+                  We combine engineering, media platforms, and creative strategy to create scalable technology products that empower businesses, creators, and audiences.
                 </p>
-                <p className="italic font-bold text-slate-950 border-l-4 border-[#008080] pl-6 py-2">
-                  Cre8sphere Media is positioned at the intersection of media, AI, and digital product innovation.
+                <p className="italic font-bold text-slate-900 border-l-4 border-[#008080] pl-5 py-1 text-sm sm:text-base">
+                  Cre8sphere LLP is positioned as a forward-thinking technology and innovation company.
                 </p>
               </div>
             </article>
 
-            {/* Right Column: Supporting Pillar Blocks */}
+            {/* Right Column */}
             <div className="relative">
-              {/* Subtle Background Glow behind pillars */}
               <div className="pointer-events-none absolute -inset-4 -z-10">
-                <div className="absolute inset-0 rounded-[40px] bg-[radial-gradient(circle_at_center,rgba(17,122,122,0.05),transparent_70%)] blur-2xl" />
+                <div className="absolute inset-0 rounded-[40px] bg-[radial-gradient(circle_at_center,rgba(0,128,128,0.06),transparent_70%)] blur-2xl" />
               </div>
 
               <motion.div 
@@ -96,7 +93,7 @@ function WhyCre8sphere() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.1 }}
-                className="grid gap-6 sm:grid-cols-2"
+                className="grid gap-5 sm:grid-cols-2"
               >
                 {pillars.map((pillar) => {
                   const Icon = pillar.icon;
@@ -104,13 +101,15 @@ function WhyCre8sphere() {
                     <motion.article 
                       key={pillar.title} 
                       variants={itemVariants}
-                      className="group relative rounded-[28px] border border-slate-100 bg-slate-50/40 p-8 transition-all duration-300 hover:bg-white hover:shadow-[0_12px_30px_-6px_rgba(15,23,42,0.08)]"
+                      className="group relative rounded-3xl border border-slate-200 bg-slate-50/50 p-6 sm:p-7 transition-all duration-300 hover:bg-white hover:border-[#008080]/30 hover:shadow-xl"
                     >
                       <div className={`inline-flex h-10 w-10 items-center justify-center rounded-2xl border ${pillar.iconClass} transition-transform duration-300 group-hover:scale-110`}>
-                        <Icon className="h-4 w-4" />
+                        <Icon className="h-5 w-5" />
                       </div>
-                      <h3 className="mt-6 text-slate-950 uppercase opacity-90 text-[16px] sm:text-[18px] tracking-widest">{pillar.title}</h3>
-                      <p className="mt-4 subtext opacity-100">
+                      <h3 className="mt-5 font-heading text-lg font-bold text-slate-900">
+                        {pillar.title}
+                      </h3>
+                      <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
                         {pillar.description}
                       </p>
                     </motion.article>
