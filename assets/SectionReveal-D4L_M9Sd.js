@@ -1,1 +1,0 @@
-import{j as e,m as o}from"./index-Dqfa5Zzv.js";function a({children:t,className:i=""}){return e.jsx(o.div,{initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0,amount:.05},transition:{duration:.5,ease:"easeOut"},className:i,children:t})}export{a as S};
